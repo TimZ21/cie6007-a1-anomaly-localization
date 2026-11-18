@@ -1,0 +1,3 @@
+# Install after the unchanged core and torch locks, using --no-deps.
+faiss-cpu==1.15.1
+opencv-python-headless==5.0.0.93

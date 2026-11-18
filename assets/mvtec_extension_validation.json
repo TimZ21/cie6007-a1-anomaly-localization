@@ -1,0 +1,434 @@
+{
+  "status": "passed",
+  "purpose": "data_integrity_only_no_model_selection",
+  "counts_source": "https://www.mvtec.com/fileadmin/Redaktion/mvtec.com/05_research_teaching/datasets/mvtec_ad.pdf#page=4",
+  "categories": {
+    "bottle": {
+      "train_good": 209,
+      "test_good": 20,
+      "test_defective": 63,
+      "ground_truth_masks": 63,
+      "expected_counts_train_good_test_good_test_defective": [
+        209,
+        20,
+        63
+      ],
+      "defect_counts": {
+        "broken_large": 20,
+        "broken_small": 22,
+        "contamination": 21
+      },
+      "png_modes": {
+        "L": 63,
+        "RGB": 292
+      },
+      "png_sizes_wh": {
+        "(900, 900)": 355
+      },
+      "all_png_decoded": true,
+      "all_images_square": true,
+      "all_defects_have_aligned_binary_nonempty_masks": true
+    },
+    "cable": {
+      "train_good": 224,
+      "test_good": 58,
+      "test_defective": 92,
+      "ground_truth_masks": 92,
+      "expected_counts_train_good_test_good_test_defective": [
+        224,
+        58,
+        92
+      ],
+      "defect_counts": {
+        "bent_wire": 13,
+        "cable_swap": 12,
+        "combined": 11,
+        "cut_inner_insulation": 14,
+        "cut_outer_insulation": 10,
+        "missing_cable": 12,
+        "missing_wire": 10,
+        "poke_insulation": 10
+      },
+      "png_modes": {
+        "L": 92,
+        "RGB": 374
+      },
+      "png_sizes_wh": {
+        "(1024, 1024)": 466
+      },
+      "all_png_decoded": true,
+      "all_images_square": true,
+      "all_defects_have_aligned_binary_nonempty_masks": true
+    },
+    "carpet": {
+      "train_good": 280,
+      "test_good": 28,
+      "test_defective": 89,
+      "ground_truth_masks": 89,
+      "expected_counts_train_good_test_good_test_defective": [
+        280,
+        28,
+        89
+      ],
+      "defect_counts": {
+        "color": 19,
+        "cut": 17,
+        "hole": 17,
+        "metal_contamination": 17,
+        "thread": 19
+      },
+      "png_modes": {
+        "L": 89,
+        "RGB": 397
+      },
+      "png_sizes_wh": {
+        "(1024, 1024)": 486
+      },
+      "all_png_decoded": true,
+      "all_images_square": true,
+      "all_defects_have_aligned_binary_nonempty_masks": true
+    },
+    "capsule": {
+      "train_good": 219,
+      "test_good": 23,
+      "test_defective": 109,
+      "ground_truth_masks": 109,
+      "expected_counts_train_good_test_good_test_defective": [
+        219,
+        23,
+        109
+      ],
+      "defect_counts": {
+        "crack": 23,
+        "faulty_imprint": 22,
+        "poke": 21,
+        "scratch": 23,
+        "squeeze": 20
+      },
+      "png_modes": {
+        "L": 109,
+        "RGB": 351
+      },
+      "png_sizes_wh": {
+        "(1000, 1000)": 460
+      },
+      "all_png_decoded": true,
+      "all_images_square": true,
+      "all_defects_have_aligned_binary_nonempty_masks": true
+    },
+    "grid": {
+      "train_good": 264,
+      "test_good": 21,
+      "test_defective": 57,
+      "ground_truth_masks": 57,
+      "expected_counts_train_good_test_good_test_defective": [
+        264,
+        21,
+        57
+      ],
+      "defect_counts": {
+        "bent": 12,
+        "broken": 12,
+        "glue": 11,
+        "metal_contamination": 11,
+        "thread": 11
+      },
+      "png_modes": {
+        "L": 399
+      },
+      "png_sizes_wh": {
+        "(1024, 1024)": 399
+      },
+      "all_png_decoded": true,
+      "all_images_square": true,
+      "all_defects_have_aligned_binary_nonempty_masks": true
+    },
+    "hazelnut": {
+      "train_good": 391,
+      "test_good": 40,
+      "test_defective": 70,
+      "ground_truth_masks": 70,
+      "expected_counts_train_good_test_good_test_defective": [
+        391,
+        40,
+        70
+      ],
+      "defect_counts": {
+        "crack": 18,
+        "cut": 17,
+        "hole": 18,
+        "print": 17
+      },
+      "png_modes": {
+        "L": 70,
+        "RGB": 501
+      },
+      "png_sizes_wh": {
+        "(1024, 1024)": 571
+      },
+      "all_png_decoded": true,
+      "all_images_square": true,
+      "all_defects_have_aligned_binary_nonempty_masks": true
+    },
+    "leather": {
+      "train_good": 245,
+      "test_good": 32,
+      "test_defective": 92,
+      "ground_truth_masks": 92,
+      "expected_counts_train_good_test_good_test_defective": [
+        245,
+        32,
+        92
+      ],
+      "defect_counts": {
+        "color": 19,
+        "cut": 19,
+        "fold": 17,
+        "glue": 19,
+        "poke": 18
+      },
+      "png_modes": {
+        "L": 92,
+        "RGB": 369
+      },
+      "png_sizes_wh": {
+        "(1024, 1024)": 461
+      },
+      "all_png_decoded": true,
+      "all_images_square": true,
+      "all_defects_have_aligned_binary_nonempty_masks": true
+    },
+    "metal_nut": {
+      "train_good": 220,
+      "test_good": 22,
+      "test_defective": 93,
+      "ground_truth_masks": 93,
+      "expected_counts_train_good_test_good_test_defective": [
+        220,
+        22,
+        93
+      ],
+      "defect_counts": {
+        "bent": 25,
+        "color": 22,
+        "flip": 23,
+        "scratch": 23
+      },
+      "png_modes": {
+        "L": 93,
+        "RGB": 335
+      },
+      "png_sizes_wh": {
+        "(700, 700)": 428
+      },
+      "all_png_decoded": true,
+      "all_images_square": true,
+      "all_defects_have_aligned_binary_nonempty_masks": true
+    },
+    "pill": {
+      "train_good": 267,
+      "test_good": 26,
+      "test_defective": 141,
+      "ground_truth_masks": 141,
+      "expected_counts_train_good_test_good_test_defective": [
+        267,
+        26,
+        141
+      ],
+      "defect_counts": {
+        "color": 25,
+        "combined": 17,
+        "contamination": 21,
+        "crack": 26,
+        "faulty_imprint": 19,
+        "pill_type": 9,
+        "scratch": 24
+      },
+      "png_modes": {
+        "L": 141,
+        "RGB": 434
+      },
+      "png_sizes_wh": {
+        "(800, 800)": 575
+      },
+      "all_png_decoded": true,
+      "all_images_square": true,
+      "all_defects_have_aligned_binary_nonempty_masks": true
+    },
+    "screw": {
+      "train_good": 320,
+      "test_good": 41,
+      "test_defective": 119,
+      "ground_truth_masks": 119,
+      "expected_counts_train_good_test_good_test_defective": [
+        320,
+        41,
+        119
+      ],
+      "defect_counts": {
+        "manipulated_front": 24,
+        "scratch_head": 24,
+        "scratch_neck": 25,
+        "thread_side": 23,
+        "thread_top": 23
+      },
+      "png_modes": {
+        "L": 599
+      },
+      "png_sizes_wh": {
+        "(1024, 1024)": 599
+      },
+      "all_png_decoded": true,
+      "all_images_square": true,
+      "all_defects_have_aligned_binary_nonempty_masks": true
+    },
+    "tile": {
+      "train_good": 230,
+      "test_good": 33,
+      "test_defective": 84,
+      "ground_truth_masks": 84,
+      "expected_counts_train_good_test_good_test_defective": [
+        230,
+        33,
+        84
+      ],
+      "defect_counts": {
+        "crack": 17,
+        "glue_strip": 18,
+        "gray_stroke": 16,
+        "oil": 18,
+        "rough": 15
+      },
+      "png_modes": {
+        "L": 84,
+        "RGB": 347
+      },
+      "png_sizes_wh": {
+        "(840, 840)": 431
+      },
+      "all_png_decoded": true,
+      "all_images_square": true,
+      "all_defects_have_aligned_binary_nonempty_masks": true
+    },
+    "toothbrush": {
+      "train_good": 60,
+      "test_good": 12,
+      "test_defective": 30,
+      "ground_truth_masks": 30,
+      "expected_counts_train_good_test_good_test_defective": [
+        60,
+        12,
+        30
+      ],
+      "defect_counts": {
+        "defective": 30
+      },
+      "png_modes": {
+        "L": 30,
+        "RGB": 102
+      },
+      "png_sizes_wh": {
+        "(1024, 1024)": 132
+      },
+      "all_png_decoded": true,
+      "all_images_square": true,
+      "all_defects_have_aligned_binary_nonempty_masks": true
+    },
+    "transistor": {
+      "train_good": 213,
+      "test_good": 60,
+      "test_defective": 40,
+      "ground_truth_masks": 40,
+      "expected_counts_train_good_test_good_test_defective": [
+        213,
+        60,
+        40
+      ],
+      "defect_counts": {
+        "bent_lead": 10,
+        "cut_lead": 10,
+        "damaged_case": 10,
+        "misplaced": 10
+      },
+      "png_modes": {
+        "L": 40,
+        "RGB": 313
+      },
+      "png_sizes_wh": {
+        "(1024, 1024)": 353
+      },
+      "all_png_decoded": true,
+      "all_images_square": true,
+      "all_defects_have_aligned_binary_nonempty_masks": true
+    },
+    "wood": {
+      "train_good": 247,
+      "test_good": 19,
+      "test_defective": 60,
+      "ground_truth_masks": 60,
+      "expected_counts_train_good_test_good_test_defective": [
+        247,
+        19,
+        60
+      ],
+      "defect_counts": {
+        "color": 8,
+        "combined": 11,
+        "hole": 10,
+        "liquid": 10,
+        "scratch": 21
+      },
+      "png_modes": {
+        "L": 60,
+        "RGB": 326
+      },
+      "png_sizes_wh": {
+        "(1024, 1024)": 386
+      },
+      "all_png_decoded": true,
+      "all_images_square": true,
+      "all_defects_have_aligned_binary_nonempty_masks": true
+    },
+    "zipper": {
+      "train_good": 240,
+      "test_good": 32,
+      "test_defective": 119,
+      "ground_truth_masks": 119,
+      "expected_counts_train_good_test_good_test_defective": [
+        240,
+        32,
+        119
+      ],
+      "defect_counts": {
+        "broken_teeth": 19,
+        "combined": 16,
+        "fabric_border": 17,
+        "fabric_interior": 16,
+        "rough": 17,
+        "split_teeth": 18,
+        "squeezed_teeth": 16
+      },
+      "png_modes": {
+        "L": 510
+      },
+      "png_sizes_wh": {
+        "(1024, 1024)": 510
+      },
+      "all_png_decoded": true,
+      "all_images_square": true,
+      "all_defects_have_aligned_binary_nonempty_masks": true
+    }
+  },
+  "checked_at_utc": "2026-11-03T05:00:40.148633+00:00",
+  "total_pngs": 6612,
+  "original_inventory_records_identical": true,
+  "old_split_algorithm_bridge": "passed",
+  "inventory_sha256": "9034d4bbd4251cf52ba1f3429671b00bd9ecbcc2c43bd612fc5e84c4cb483833",
+  "split_sha256": "406acdb6bd57e36115763ad670ec690fc3589d05f646b7e3ff5a00b6b023792e",
+  "protected_files_sha256": {
+    "assets/manifest.json": "d92c54849e0e36cf3603bbcbed07f755b8c90eeae848fe58f43e35a6c47a2c70",
+    "assets/data_files.json": "16a95609c5eacdc100dd0300bba702186be17d604a8e69cdac7cafa1cf891a30",
+    "assets/data_validation.json": "26ecbee3b2c64494e3b4e99773dd3322f0b2bc0ae05c89eb2df47ad9be467957",
+    "splits/mvtec_ad_5seed.json": "18adf19fc953fa0110246332336ef0260d425fdd39cae381866c33ee554fcfc4"
+  }
+}

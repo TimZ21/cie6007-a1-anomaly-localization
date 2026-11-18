@@ -1,0 +1,279 @@
+{
+  "status": "complete_matrix",
+  "evaluations": 126,
+  "new_evaluations": 63,
+  "reused_evaluations": 63,
+  "new_heads": 9,
+  "reused_A1_heads": 9,
+  "categories": [
+    "bottle",
+    "cable",
+    "carpet"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "arms": {
+    "A1": {
+      "shift_pixel_ap": {
+        "mean": 70.12294910262095,
+        "sd": 0.36306000117058695,
+        "values": [
+          70.0041257986701,
+          69.83418934382483,
+          70.5305321653679
+        ]
+      },
+      "shift_image_auroc": {
+        "mean": 98.44105724915319,
+        "sd": 0.14821011160948008,
+        "values": [
+          98.33937198067633,
+          98.37268865567216,
+          98.61111111111111
+        ]
+      },
+      "clean_pixel_ap": {
+        "mean": 70.25834864493156,
+        "sd": 0.3813451772457668,
+        "values": [
+          70.1319391782497,
+          69.95625948390999,
+          70.68684727263496
+        ]
+      },
+      "clean_image_auroc": {
+        "mean": 98.37164750957852,
+        "sd": 0.1733813059150981,
+        "values": [
+          98.21339330334831,
+          98.34457771114442,
+          98.55697151424287
+        ]
+      }
+    },
+    "MLP768-16": {
+      "shift_pixel_ap": {
+        "mean": 70.42861740880598,
+        "sd": 0.23457695414991458,
+        "values": [
+          70.302061143916,
+          70.28449741859535,
+          70.69929366390659
+        ]
+      },
+      "shift_image_auroc": {
+        "mean": 98.38518240879561,
+        "sd": 0.09339608562422566,
+        "values": [
+          98.32167249708479,
+          98.34145427286357,
+          98.49242045643845
+        ]
+      },
+      "clean_pixel_ap": {
+        "mean": 70.55473040612331,
+        "sd": 0.2607458049332304,
+        "values": [
+          70.41014896908982,
+          70.39830616920582,
+          70.85573608007427
+        ]
+      },
+      "clean_image_auroc": {
+        "mean": 98.3216724970848,
+        "sd": 0.10040449318041131,
+        "values": [
+          98.20714642678662,
+          98.36331834082958,
+          98.39455272363818
+        ]
+      }
+    }
+  },
+  "paired": {
+    "shift_pixel_ap": {
+      "mean": 0.30566830618504465,
+      "sd": 0.14093249327472848,
+      "values": [
+        0.2979353452459026,
+        0.4503080747705316,
+        0.16876149853869982
+      ]
+    },
+    "shift_image_auroc": {
+      "mean": -0.05587484035759893,
+      "sd": 0.05481941508491749,
+      "values": [
+        -0.0176994835915366,
+        -0.031234382808596903,
+        -0.1186906546726633
+      ]
+    },
+    "clean_pixel_ap": {
+      "mean": 0.29638176119176135,
+      "sd": 0.13748262413344742,
+      "values": [
+        0.27820979084012637,
+        0.44204668529585306,
+        0.16888880743930468
+      ]
+    },
+    "clean_image_auroc": {
+      "mean": -0.04997501249375258,
+      "sd": 0.09817737159858987,
+      "values": [
+        -0.006246876561714447,
+        0.018740629685158144,
+        -0.16241879060470144
+      ]
+    }
+  },
+  "parameters": {
+    "A1": 24992,
+    "MLP768-16": 590976
+  },
+  "parameter_ratio": 23.646606914212548,
+  "aggregation": "Compute MLP768-16 minus A1 within identical category/seed/condition cells; equally weight categories and conditions within each seed, then report the mean and sample SD of the three seed aggregates.",
+  "category_rule": "Six-shift AP difference averaged over seeds: > +0.1 pp improved, < -0.1 pp degraded; the inclusive interval [-0.1,+0.1] is tied.",
+  "scope": "Three previously inspected development categories, the full official test splits, 16 normal references and a common 1,000-update budget. Hidden width and parameter count change together; this is not a parameter-controlled up/down ordering study.",
+  "inference_limit": "Three seeds share the same test images and are not independent datasets. Positive averages and descriptive sign counts do not establish statistical significance. No independently tuned architecture optimum is tested.",
+  "final_method": "Frozen A1 remains the final method; this exploration does not replace it.",
+  "categories_by_direction": {
+    "improved": [
+      "carpet"
+    ],
+    "tied": [
+      "bottle",
+      "cable"
+    ],
+    "degraded": []
+  },
+  "category_counts": {
+    "improved": 1,
+    "tied": 2,
+    "degraded": 0
+  },
+  "sign_stability": {
+    "category_shift_means": {
+      "positive": 2,
+      "zero": 0,
+      "negative": 1,
+      "total": 3
+    },
+    "seed_shift_means": {
+      "positive": 3,
+      "zero": 0,
+      "negative": 0,
+      "total": 3
+    },
+    "condition_shift_means": {
+      "positive": 6,
+      "zero": 0,
+      "negative": 0,
+      "total": 6
+    },
+    "category_seed_shift_means": {
+      "positive": 6,
+      "zero": 0,
+      "negative": 3,
+      "total": 9
+    },
+    "shift_cells": {
+      "positive": 36,
+      "zero": 0,
+      "negative": 18,
+      "total": 54
+    }
+  },
+  "diagnostics": {
+    "A1": {
+      "illumination_squared_l2": {
+        "mean": 0.0014559799232150255,
+        "sd": 3.823938622998928e-05,
+        "values": [
+          0.0014120040364743829,
+          0.0014745266897115232,
+          0.0014814090434591698
+        ]
+      },
+      "anchor_squared_l2": {
+        "mean": 0.004868729059355796,
+        "sd": 0.0004356697196012591,
+        "values": [
+          0.0047554393357884805,
+          0.004500895201439666,
+          0.005349852640839241
+        ]
+      }
+    },
+    "MLP768-16": {
+      "illumination_squared_l2": {
+        "mean": 0.0013028624627470231,
+        "sd": 2.2501249969827803e-05,
+        "values": [
+          0.0012782852429407872,
+          0.0013078520007809475,
+          0.0013224501445193344
+        ]
+      },
+      "anchor_squared_l2": {
+        "mean": 0.007219847754787641,
+        "sd": 0.0006097736444554561,
+        "values": [
+          0.0068366547962218265,
+          0.006899881662285168,
+          0.007923006805855929
+        ]
+      }
+    }
+  },
+  "paired_benchmark": {
+    "scope": "cached_adapter_plus_exact_nn",
+    "excludes": [
+      "encoder extraction",
+      "CPU-to-GPU transfer",
+      "map postprocessing",
+      "metric calculation"
+    ],
+    "arms": [
+      {
+        "arm": "A1",
+        "categories": 3,
+        "repetitions_per_category": 2,
+        "images_per_repeat": 8,
+        "scoring_s_macro_ms_per_image": 39.985460423243545,
+        "adapter_s_macro_ms_per_image": 1.5455083412234671,
+        "bank_transform_s_mean": 0.028929950009721022,
+        "peak_cuda_allocated_mib": 740.9892578125,
+        "peak_cuda_reserved_mib": 956.0,
+        "paired_training_ms_per_step": 17.449999996460974,
+        "paired_training_peak_cuda_allocated_mib": 453.734375,
+        "paired_training_peak_cuda_reserved_mib": 460.0
+      },
+      {
+        "arm": "MLP768-16",
+        "categories": 3,
+        "repetitions_per_category": 2,
+        "images_per_repeat": 8,
+        "scoring_s_macro_ms_per_image": 40.48833333702836,
+        "adapter_s_macro_ms_per_image": 1.4034708353089325,
+        "bank_transform_s_mean": 0.045562716656907774,
+        "peak_cuda_allocated_mib": 743.89794921875,
+        "peak_cuda_reserved_mib": 1002.0,
+        "paired_training_ms_per_step": 20.33979333161066,
+        "paired_training_peak_cuda_allocated_mib": 467.46044921875,
+        "paired_training_peak_cuda_reserved_mib": 480.0
+      }
+    ],
+    "note": "Fixed first eight sorted clean test images per category, seed0; two paired repeats per method. Repeats are timing measurements, not new accuracy evaluations. These cached-feature costs are not end-to-end inference latency."
+  },
+  "inputs_sha256": {
+    "config.json": "7c9398cc28f55eb84e7910b3c0b388718dd249478069949f3ec3bd239da05fed",
+    "metrics.csv": "5efba5f8e511a789eede0724e40f7c1864032146006f3f4f65497576d196f866",
+    "verification.json": "9348fa77e289befbd3a67df2bafe91a3bdfcad192da54b1692c1ebe9e11231dc",
+    "paired_benchmark.json": "d660a49a6dac2b60a3a009a8950147bb5ad4c1085ec96e32ebd6529f23d8fd53"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-18",
+  "scope": "Public packaging validation; no fresh full dataset experiment",
+  "environment": {
+    "platform": "macOS CPU",
+    "python": "3.12.14",
+    "torch": "2.13.0",
+    "torchvision": "0.28.0",
+    "numpy": "2.4.6",
+    "pillow": "12.3.0"
+  },
+  "tests": {
+    "total": 27,
+    "passed": 26,
+    "skipped": 1,
+    "skip_reason": "CUDA-only check; GPU unavailable in this validation environment"
+  },
+  "sampling_schedules": {
+    "total": 90,
+    "active_hashes_match": 90,
+    "historical_full_hashes_match": 90
+  },
+  "archived_metric_cells_verified": 5517,
+  "studies": 8,
+  "scientific_sources_byte_identical": 27
+}

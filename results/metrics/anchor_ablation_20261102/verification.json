@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "utc": "2026-11-02T12:33:38.917632+00:00",
+  "new_evaluations": 63,
+  "new_image_rows": 7350,
+  "reused_evaluations": 126,
+  "reused_audit_sha256": "9c22e315368457d8ead6bb5e32ca84a6e8f5220673bbf4f4c6aa580398a52fb9",
+  "max_errors": {
+    "independent_auroc": 1.1102230246251565e-16,
+    "reconstructed_ap": 0.0,
+    "patch_to_image": 0.0,
+    "bank": 0.0,
+    "faiss": 9.803989087231457e-07,
+    "diagnostics": 0.0
+  },
+  "independent_sklearn_clean_seed0": [
+    {
+      "category": "bottle",
+      "error": 0.0
+    },
+    {
+      "category": "cable",
+      "error": 1.1102230246251565e-16
+    },
+    {
+      "category": "carpet",
+      "error": 5.551115123125783e-17
+    }
+  ],
+  "control_bridge_max_error": {
+    "A0": 0.0,
+    "A1": 0.0
+  },
+  "settings_except_anchor_init_batches_cache_reference_checkpoint_and_result_hashes": "passed",
+  "audit_elapsed_s": 396.37983879999956
+}

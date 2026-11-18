@@ -1,0 +1,195 @@
+{
+  "status": "passed",
+  "pairs": [
+    {
+      "category": "bottle",
+      "seed": 0,
+      "status": "passed",
+      "initial_state_sha256": {
+        "A1": "fd6dce8095f99e67365b10ac8bb07139ba51677e302b1f0ca700ed99c36a9631",
+        "MLP768-16": "5e3e32e243177658e10f093baf2d9d7d34c80b5fc388ab2143bcc50b4351a167"
+      },
+      "raw_bank_sha256": "9f5ba80f31f68ed6b802f2a2db344088d2aebc485138f0ee04b2010dd254ae62",
+      "effective_center_patches": 512,
+      "grid_hw": [
+        32,
+        32
+      ],
+      "steps": 1000,
+      "normal_tuple_count": 96,
+      "active_schedule_sha256": "bcd2deb7e2c0f5e8ebb19059f8b9122b276132b559e2b289028846f25b71f1e6",
+      "legacy_full_schedule_sha256": "f258c3c940093f297801d50fc1f9e912bfb301eecddff251e2f761f388ffb89c",
+      "inactive_draws_used_only_for_rng_compatibility": true,
+      "legacy16_schedule_verified": true
+    },
+    {
+      "category": "bottle",
+      "seed": 1,
+      "status": "passed",
+      "initial_state_sha256": {
+        "A1": "9dc6f3234db0746c081dbc22cbcc151ade4e90cf5f7a514549e22b2f256ca4aa",
+        "MLP768-16": "2be88844a994b3e4fe4e4c0ff43b1ec405c26dc648c085f11030f4f77602e8b1"
+      },
+      "raw_bank_sha256": "c54956043af84c77a3b24e0585750dcff99562cc2f4ac88b69d18c0a0c07ea7e",
+      "effective_center_patches": 512,
+      "grid_hw": [
+        32,
+        32
+      ],
+      "steps": 1000,
+      "normal_tuple_count": 96,
+      "active_schedule_sha256": "0201a6d48cf068f070dc1a8da3684469b466da32a9780c7eceec10dc929381db",
+      "legacy_full_schedule_sha256": "06613c60608f8ebcf12110ffee87e7720b49342e8145445579e7c41a19ddb57a",
+      "inactive_draws_used_only_for_rng_compatibility": true,
+      "legacy16_schedule_verified": true
+    },
+    {
+      "category": "bottle",
+      "seed": 2,
+      "status": "passed",
+      "initial_state_sha256": {
+        "A1": "7e4b164d0b0446a7c63bf2ad99cb038cebd00bf12e95a767004fd65ec012feb1",
+        "MLP768-16": "339311cec336f49272407209e19a98af9b05d44b9d26412a66d2a54c5dba47de"
+      },
+      "raw_bank_sha256": "30bf6e7597e7d7dfc55e32316bf5cbd964553a410c7f1cb40dac7cbf3343002f",
+      "effective_center_patches": 512,
+      "grid_hw": [
+        32,
+        32
+      ],
+      "steps": 1000,
+      "normal_tuple_count": 96,
+      "active_schedule_sha256": "b01910788b3c851fa7fb45cbd0084c7bfb1f205d762677d4c63684ecb31c374e",
+      "legacy_full_schedule_sha256": "5c03100feee81d4d9e7b905caeb5ab31402570e832375ece9b46f70a35d9e8fe",
+      "inactive_draws_used_only_for_rng_compatibility": true,
+      "legacy16_schedule_verified": true
+    },
+    {
+      "category": "cable",
+      "seed": 0,
+      "status": "passed",
+      "initial_state_sha256": {
+        "A1": "fd6dce8095f99e67365b10ac8bb07139ba51677e302b1f0ca700ed99c36a9631",
+        "MLP768-16": "5e3e32e243177658e10f093baf2d9d7d34c80b5fc388ab2143bcc50b4351a167"
+      },
+      "raw_bank_sha256": "ce1928d8897d55b2b57b9210311e3e709985ec1b8e2f6be115b8ffb5515a6472",
+      "effective_center_patches": 512,
+      "grid_hw": [
+        32,
+        32
+      ],
+      "steps": 1000,
+      "normal_tuple_count": 96,
+      "active_schedule_sha256": "051a9a5be5b373665b8bc1a718ddcf6506f0aae7c46ca6041c7c371ca549efc8",
+      "legacy_full_schedule_sha256": "c9b32790ef5caf9d94cfc77f91f152cc8a6f4adb22ed366c4014003630cd5c55",
+      "inactive_draws_used_only_for_rng_compatibility": true,
+      "legacy16_schedule_verified": true
+    },
+    {
+      "category": "cable",
+      "seed": 1,
+      "status": "passed",
+      "initial_state_sha256": {
+        "A1": "9dc6f3234db0746c081dbc22cbcc151ade4e90cf5f7a514549e22b2f256ca4aa",
+        "MLP768-16": "2be88844a994b3e4fe4e4c0ff43b1ec405c26dc648c085f11030f4f77602e8b1"
+      },
+      "raw_bank_sha256": "0a4097c3dcc142c836a031b6a526ac0d3c2b7b4002d1b41b34ccb890b029c154",
+      "effective_center_patches": 512,
+      "grid_hw": [
+        32,
+        32
+      ],
+      "steps": 1000,
+      "normal_tuple_count": 96,
+      "active_schedule_sha256": "817f911782410c712d085d2c545914e76e11437c29cd0236d355d8909a49c7a8",
+      "legacy_full_schedule_sha256": "e6cd40ad8c0e27f8f8dc0fe69a5db07c7ee533730a381dab534947199d0a06a3",
+      "inactive_draws_used_only_for_rng_compatibility": true,
+      "legacy16_schedule_verified": true
+    },
+    {
+      "category": "cable",
+      "seed": 2,
+      "status": "passed",
+      "initial_state_sha256": {
+        "A1": "7e4b164d0b0446a7c63bf2ad99cb038cebd00bf12e95a767004fd65ec012feb1",
+        "MLP768-16": "339311cec336f49272407209e19a98af9b05d44b9d26412a66d2a54c5dba47de"
+      },
+      "raw_bank_sha256": "931b93df7e90eea48a284dafc7a83b69d4d1401794923abdf88ca2e630a8a2a2",
+      "effective_center_patches": 512,
+      "grid_hw": [
+        32,
+        32
+      ],
+      "steps": 1000,
+      "normal_tuple_count": 96,
+      "active_schedule_sha256": "b01910788b3c851fa7fb45cbd0084c7bfb1f205d762677d4c63684ecb31c374e",
+      "legacy_full_schedule_sha256": "fd0a2a5709dc3addf9dc752093ae49b37bcbf0b6d7543d29899ac474d76934a7",
+      "inactive_draws_used_only_for_rng_compatibility": true,
+      "legacy16_schedule_verified": true
+    },
+    {
+      "category": "carpet",
+      "seed": 0,
+      "status": "passed",
+      "initial_state_sha256": {
+        "A1": "fd6dce8095f99e67365b10ac8bb07139ba51677e302b1f0ca700ed99c36a9631",
+        "MLP768-16": "5e3e32e243177658e10f093baf2d9d7d34c80b5fc388ab2143bcc50b4351a167"
+      },
+      "raw_bank_sha256": "dfd99375f95b428627a3ea6d517d1d6b324f0190fd7314a5e72eb7052ee0ed5e",
+      "effective_center_patches": 512,
+      "grid_hw": [
+        32,
+        32
+      ],
+      "steps": 1000,
+      "normal_tuple_count": 96,
+      "active_schedule_sha256": "bcd2deb7e2c0f5e8ebb19059f8b9122b276132b559e2b289028846f25b71f1e6",
+      "legacy_full_schedule_sha256": "321459d0875bf570a0771db744a86164f8334419ad3b86af666883749d01c6f6",
+      "inactive_draws_used_only_for_rng_compatibility": true,
+      "legacy16_schedule_verified": true
+    },
+    {
+      "category": "carpet",
+      "seed": 1,
+      "status": "passed",
+      "initial_state_sha256": {
+        "A1": "9dc6f3234db0746c081dbc22cbcc151ade4e90cf5f7a514549e22b2f256ca4aa",
+        "MLP768-16": "2be88844a994b3e4fe4e4c0ff43b1ec405c26dc648c085f11030f4f77602e8b1"
+      },
+      "raw_bank_sha256": "539c937f8b643d64214c4bb045f559b9711ab81dbf61b472e7553df1058bbdad",
+      "effective_center_patches": 512,
+      "grid_hw": [
+        32,
+        32
+      ],
+      "steps": 1000,
+      "normal_tuple_count": 96,
+      "active_schedule_sha256": "5b9f2dbae59866c17b5c6616265c3a797a585622e8af204c59ca1e2c3d7533e2",
+      "legacy_full_schedule_sha256": "286ab1c03e287bf1b42cb47a9a7708cf619259cdf466f3e25a86fe6995d58c1e",
+      "inactive_draws_used_only_for_rng_compatibility": true,
+      "legacy16_schedule_verified": true
+    },
+    {
+      "category": "carpet",
+      "seed": 2,
+      "status": "passed",
+      "initial_state_sha256": {
+        "A1": "7e4b164d0b0446a7c63bf2ad99cb038cebd00bf12e95a767004fd65ec012feb1",
+        "MLP768-16": "339311cec336f49272407209e19a98af9b05d44b9d26412a66d2a54c5dba47de"
+      },
+      "raw_bank_sha256": "377c9fa7098be5b0623671e90318e049c3a4d543d48b959774b650d8a592220c",
+      "effective_center_patches": 512,
+      "grid_hw": [
+        32,
+        32
+      ],
+      "steps": 1000,
+      "normal_tuple_count": 96,
+      "active_schedule_sha256": "b01910788b3c851fa7fb45cbd0084c7bfb1f205d762677d4c63684ecb31c374e",
+      "legacy_full_schedule_sha256": "81aae7039832c21505da18ff56bf875725794004e9a39c14005fc2f736e9dd1b",
+      "inactive_draws_used_only_for_rng_compatibility": true,
+      "legacy16_schedule_verified": true
+    }
+  ],
+  "all_new_heads_before_evaluation": true
+}

@@ -1,0 +1,311 @@
+{
+  "backbone": "dinov2_vits14",
+  "input_size": 448,
+  "rotations": [
+    0,
+    45,
+    90,
+    135,
+    180,
+    225,
+    270,
+    315
+  ],
+  "search_chunk": 128,
+  "weights_sha256": "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9",
+  "conditions": [
+    {
+      "name": "clean",
+      "kind": "clean",
+      "factor": 1.0
+    },
+    {
+      "name": "brightness_070",
+      "kind": "brightness",
+      "factor": 0.7
+    },
+    {
+      "name": "brightness_130",
+      "kind": "brightness",
+      "factor": 1.3
+    },
+    {
+      "name": "contrast_070",
+      "kind": "contrast",
+      "factor": 0.7
+    },
+    {
+      "name": "contrast_130",
+      "kind": "contrast",
+      "factor": 1.3
+    },
+    {
+      "name": "gamma_070",
+      "kind": "gamma",
+      "factor": 0.7
+    },
+    {
+      "name": "gamma_140",
+      "kind": "gamma",
+      "factor": 1.4
+    }
+  ],
+  "training_conditions": [
+    {
+      "name": "brightness_085",
+      "kind": "brightness",
+      "factor": 0.85
+    },
+    {
+      "name": "brightness_115",
+      "kind": "brightness",
+      "factor": 1.15
+    },
+    {
+      "name": "contrast_085",
+      "kind": "contrast",
+      "factor": 0.85
+    },
+    {
+      "name": "contrast_115",
+      "kind": "contrast",
+      "factor": 1.15
+    }
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "categories": [
+    "bottle",
+    "cable",
+    "capsule",
+    "carpet",
+    "grid",
+    "hazelnut",
+    "leather",
+    "metal_nut",
+    "pill",
+    "screw",
+    "tile",
+    "toothbrush",
+    "transistor",
+    "wood",
+    "zipper"
+  ],
+  "development_categories": [
+    "bottle",
+    "cable",
+    "carpet"
+  ],
+  "extension_categories": [
+    "capsule",
+    "grid",
+    "hazelnut",
+    "leather",
+    "metal_nut",
+    "pill",
+    "screw",
+    "tile",
+    "toothbrush",
+    "transistor",
+    "wood",
+    "zipper"
+  ],
+  "reference_runs": {
+    "development": "results/metrics/adapter_full_20261102",
+    "extension": "results/metrics/mvtec_extension_20261103"
+  },
+  "inventory": "assets/mvtec_extension_files.json",
+  "data_validation": "assets/mvtec_extension_validation.json",
+  "data_root": "data/mvtec_ad",
+  "training": {
+    "steps": 1000,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "anchor_weight": 0.1,
+    "initialization_seed_offset": 5000,
+    "batch_seed_offset": 2000,
+    "split_seed_offset": 1000,
+    "checkpoint_rule": "Final fixed step only; no early stopping, tuning or refit from diagnostics/test results.",
+    "effective_center_patches": 512,
+    "effective_centers": 512,
+    "legacy_batch_size": 1024,
+    "batch_size": 1024,
+    "chunk_centers": 512,
+    "optimizer": "AdamW",
+    "foreach": false,
+    "loss": "Variant-specific, exactly as loss_variants; reference anchor remains0.1",
+    "synthetic_defect_loss": false,
+    "bottleneck": 32,
+    "fit_images": 12,
+    "diagnostic_images": 4
+  },
+  "primary_metric": "Equal-category then equal-six-shift macro pixel AP within each paired seed. Differences are formed at category/seed/condition before aggregation.",
+  "category_change_rule": {
+    "metric": "six-shift macro pixel AP difference, averaged over paired seeds",
+    "threshold_percentage_points": 0.1,
+    "improved": "delta > +0.1 pp",
+    "tied": "-0.1 pp <= delta <= +0.1 pp",
+    "degraded": "delta < -0.1 pp",
+    "interpretation": "Predeclared practical reporting threshold; not a significance test."
+  },
+  "run_id": "a1_loss_study_20261111",
+  "branch": "codex/a1-loss-study",
+  "frozen_base_commit": "b69dc93f20bbdb271619a89c09dcbc6f4b5a25da",
+  "shots": [
+    16
+  ],
+  "arms": [
+    "A0",
+    "A1",
+    "L1",
+    "L2"
+  ],
+  "new_arms": [
+    "L1",
+    "L2"
+  ],
+  "trainable_new_arms": [
+    "L1",
+    "L2"
+  ],
+  "reused_arms": [
+    "A0",
+    "A1"
+  ],
+  "expected_evaluations": 1260,
+  "expected_reused_evaluations": 630,
+  "expected_new_evaluations": 630,
+  "expected_new_heads": 90,
+  "reference_capacity_run": "results/metrics/a1_capacity_data_cnn_20261111",
+  "reference_capacity_config": "configs/a1_capacity_data_cnn.json",
+  "reference_split": "results/metrics/a1_capacity_data_cnn_20261111/splits.json",
+  "reference_cache_manifest": "results/metrics/a1_capacity_data_cnn_20261111/normal_features.json",
+  "reference_cache_root": "runs/a1_capacity_data_cnn_20261111/normal_features",
+  "reference_visualization_selection": "results/metrics/a1_capacity_data_cnn_20261111/visualizations/selection.json",
+  "reference_sha256": {
+    "configs/a1_capacity_data_cnn.json": "591aa5ca37683935c444aebaaaa07635fd1b0299171775468db08451e2526295",
+    "results/metrics/a1_capacity_data_cnn_20261111/splits.json": "6c4cd434057e948a18d667d3da7544d3bacce6339ef979452e30a14153512285",
+    "results/metrics/a1_capacity_data_cnn_20261111/normal_features.json": "2ff655c7d35511136afc7374072349f2cc0f1a44601a7d95043a99a2cea63481",
+    "results/metrics/a1_capacity_data_cnn_20261111/preflight.json": "d785704df551c5b4c95888edaa641317db0a19b767624009500cf22f36afe12f",
+    "results/metrics/a1_capacity_data_cnn_20261111/run.json": "d68ee5780260a066fdc2965b2c777e45ac8c550a07e0861cf052427a855a76b8",
+    "results/metrics/a1_capacity_data_cnn_20261111/verification.json": "08ccbce28f12fccbefc45496d775e8654f6faedc65d2f56ef7632e6045f3daba",
+    "results/metrics/a1_capacity_data_cnn_20261111/visualizations/selection.json": "a7852676cc4ec010c2fa237095ccc3447adadaa739b74df55c38a9b5a54871dd"
+  },
+  "architecture": {
+    "dimension": 384,
+    "bottleneck": 32,
+    "activation": "GELU",
+    "residual": true,
+    "output": "L2 normalization on feature dimension",
+    "output_initialization": "zero weight and bias",
+    "parameters": 24992,
+    "implementation": "Unchanged src.defect_adapter.DefectAdapter; identical initialization per seed across A1,L1,L2."
+  },
+  "fit_images_by_shots": {
+    "16": 12
+  },
+  "diagnostic_images_by_shots": {
+    "16": 4
+  },
+  "split_rule": "Filter shots==16 from the frozen capacity splits.json; preserve all45 reference/fit/diagnostic lists and their exact order. No new sampling or new data.",
+  "loss_variants": {
+    "A1": {
+      "illumination_target": "adapted_clean",
+      "anchor_weight": 0.1,
+      "formula": "mean(||h(z_t)-h(z)||^2) + 0.1 * mean(||h(z)-z||^2)"
+    },
+    "L1": {
+      "illumination_target": "adapted_clean",
+      "anchor_weight": 0.2,
+      "formula": "mean(||h(z_t)-h(z)||^2) + 0.2 * mean(||h(z)-z||^2)"
+    },
+    "L2": {
+      "illumination_target": "frozen_clean",
+      "anchor_weight": 0.1,
+      "formula": "mean(||h(z_t)-stopgrad(z)||^2) + 0.1 * mean(||h(z)-z||^2)",
+      "teacher": "Frozen normalized DINOv2 clean feature z; not stopgrad(h(z))."
+    }
+  },
+  "diagnostics": {
+    "images": "Only the original four diagnostic normal images; never used for fitting, checkpoint selection or hyperparameter selection.",
+    "unweighted_components": {
+      "illumination": "mean(||h(z_t)-h(z)||^2)",
+      "anchor": "mean(||h(z)-z||^2)",
+      "fixed_teacher_alignment": "mean(||h(z_t)-z||^2)"
+    },
+    "conditions": "The same four training photometric conditions, applied to held-out diagnostic normal images."
+  },
+  "comparisons": [
+    [
+      "L1",
+      "A1"
+    ],
+    [
+      "L2",
+      "A1"
+    ],
+    [
+      "A1",
+      "A0"
+    ],
+    [
+      "L1",
+      "A0"
+    ],
+    [
+      "L2",
+      "A0"
+    ],
+    [
+      "L2",
+      "L1"
+    ]
+  ],
+  "adoption_gates": {
+    "reference": "A1",
+    "all_required": true,
+    "shift_pixel_ap_mean_delta_pp_min": 0.3,
+    "positive_shift_pixel_ap_seed_count": 3,
+    "seed_shift_pixel_ap_delta_rule": ">0 for each paired seed",
+    "clean_pixel_ap_mean_delta_pp_min": -0.2,
+    "clean_image_auroc_mean_delta_pp_min": -0.1,
+    "shift_image_auroc_mean_delta_pp_min": -0.1,
+    "improved_categories_strictly_more_than_degraded": true,
+    "category_change_threshold_pp": 0.1,
+    "interpretation": "Preregistered practical adoption criteria, not statistical significance. Report both candidates and every failure; no additional variants or tuning after test results."
+  },
+  "visualization_rule": {
+    "seed": 0,
+    "conditions": [
+      "clean",
+      "gamma_140"
+    ],
+    "selection": "Reuse the exact frozen capacity visualization selection: first lexicographically ordered defective test path per category.",
+    "methods": [
+      "A0",
+      "A1",
+      "L1",
+      "L2"
+    ],
+    "scale": "Per case and condition, common zero to pooled-all-four-method 99th percentile. Values above the maximum saturate. No per-method rescaling.",
+    "interpretation": "Fixed illustrative cases only; not a substitute for full paired localization metrics."
+  },
+  "scope": "Stage3: exactly two loss variants at frozen MLP32/16shot architecture and data budget, all15 categories; no capacity/CNN/data/backbone changes.",
+  "restrictions": [
+    "Freeze existing A0,A1,paper,capacity/CNN code and all results. Work only on independent codex/a1-loss-study branch with new result paths.",
+    "Use existing Windows venv and RTX4060, frozen DINOv2-S/14 384D weights, unchanged feature/preprocessing/reference rotations/normalization/search/image scoring/localization processing.",
+    "For each category and paired seed use exact old12 fitting normals,4 diagnostic normals,all16 references. Do not mix categories.",
+    "Preserve1000finalsteps,AdamW lr.001 wd.0001,512effective centers,4illumination transforms and exact old center schedule. A1/L1/L2 share initialization.",
+    "L1 changes only anchor coefficient .1 to .2. L2 changes only illumination target to frozen z.detach(), keeping anchor .1. No synthesized defect or extra loss.",
+    "No test/real-defect labels for training,tuning,early stopping or checkpoint selection. Finish all90 new final heads before any L1/L2 test evaluation.",
+    "Reuse existing normal feature caches after hash/provenance checks. No new data or replacement of existing cache files.",
+    "Require source/config/data/split/cache/checkpoint/init/schedule identity checks and exact full1260 metric/pairing audit; retain all failed attempts and retries.",
+    "Report full15,original3 and prior12 separately; all categories were previously evaluated and none form a new unseen validation set.",
+    "Equalcategory/equalcondition macro; form differences within category/seed/condition. Three seeds share one testset and do not establish statistical significance.",
+    "Save all planned outcomes,including loss increases and regressions. Practical gates do not authorize additional trials,losses or hyperparameter tuning.",
+    "Publish code/config/smallresults/analysis only; exclude datasets,large feature caches and pretrained weights."
+  ]
+}

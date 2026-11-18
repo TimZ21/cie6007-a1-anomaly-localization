@@ -1,0 +1,106 @@
+{
+  "status": "passed",
+  "utc": "2026-11-02T08:46:51.724334+00:00",
+  "evaluations": 126,
+  "image_rows": 14700,
+  "max_errors": {
+    "independent_auroc": 1.1102230246251565e-16,
+    "reconstructed_pixel_ap": 0.0,
+    "patch_to_image": 0.0,
+    "adapter_bank": 0.0,
+    "faiss_sample_patch_distance": 1.0086223483085632e-06,
+    "zero_adapter_feature": 5.960464477539063e-08
+  },
+  "independent_sklearn_clean_seed0": [
+    {
+      "category": "bottle",
+      "method": "A0",
+      "absolute_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "bottle",
+      "method": "A1",
+      "absolute_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "cable",
+      "method": "A0",
+      "absolute_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "cable",
+      "method": "A1",
+      "absolute_error": 2.220446049250313e-16
+    },
+    {
+      "category": "carpet",
+      "method": "A0",
+      "absolute_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "carpet",
+      "method": "A1",
+      "absolute_error": 0.0
+    }
+  ],
+  "source_config_split_inventory_weights_cache_checkpoint_and_result_hashes": "passed",
+  "pilot_training_settings_and_code_unchanged": true,
+  "all_nine_heads_fitted_before_test_access": true,
+  "cable_training_reproduction": [
+    {
+      "status": "passed",
+      "checks": [
+        "initial_state_sha256",
+        "batch_schedule_sha256",
+        "final_state_sha256",
+        "checkpoint_step"
+      ],
+      "tensor_state_bitwise_identical": true,
+      "previous_training_sha256": "51c079a4680947ccba6f342c9254bebfa6be88523a3898aea1c408767e6f8d62",
+      "cache_file_byte_identical": true
+    },
+    {
+      "status": "passed",
+      "checks": [
+        "initial_state_sha256",
+        "batch_schedule_sha256",
+        "final_state_sha256",
+        "checkpoint_step"
+      ],
+      "tensor_state_bitwise_identical": true,
+      "previous_training_sha256": "03247f4ab7179ba7acd181c6391352a69b643595fa1745c3d0c37f8914bc0bc2",
+      "cache_file_byte_identical": true
+    },
+    {
+      "status": "passed",
+      "checks": [
+        "initial_state_sha256",
+        "batch_schedule_sha256",
+        "final_state_sha256",
+        "checkpoint_step"
+      ],
+      "tensor_state_bitwise_identical": true,
+      "previous_training_sha256": "114b9137ec41b589ee2f102bd712a4fca17666a838c3c18eb86a079798882d67",
+      "cache_file_byte_identical": true
+    }
+  ],
+  "previous_e2_reproduction": {
+    "image_score_max_error": 0.0,
+    "pixel_ap_max_error": 0.0,
+    "image_auroc_max_error": 0.0
+  },
+  "cable_pilot_evaluation_reproduction": {
+    "image_score_max_error": 0.0,
+    "pixel_ap_max_error": 0.0,
+    "image_auroc_max_error": 0.0
+  },
+  "audit_elapsed_s": 676.3779755000141,
+  "audit_entrypoint": {
+    "file": "scripts/audit_adapter_full_csv.py",
+    "sha256": "a9d435b5c9a26e624a4553034fda0a32154fc3653ea1e8951dc545f6d21d36ac",
+    "commit": "eb86a65d527f6d9eaf6502c978b9f6944f633dc3",
+    "repair": "Convert CSV score strings to floats only at the cable reproduction check. Frozen experiment and analysis files, scores, metrics and thresholds are unchanged.",
+    "first_attempt_log": "results/checks/adapter_full_audit_attempt1_20261102.txt",
+    "first_attempt_log_sha256": "b023ac19292e394ff3b3bb968771309efaf4a94c1f3ef7f345b552a77e1eaaba"
+  }
+}

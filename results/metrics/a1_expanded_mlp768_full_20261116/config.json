@@ -1,0 +1,374 @@
+{
+  "backbone": "dinov2_vits14",
+  "input_size": 448,
+  "rotations": [
+    0,
+    45,
+    90,
+    135,
+    180,
+    225,
+    270,
+    315
+  ],
+  "search_chunk": 128,
+  "weights_sha256": "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9",
+  "conditions": [
+    {
+      "name": "clean",
+      "kind": "clean",
+      "factor": 1.0
+    },
+    {
+      "name": "brightness_070",
+      "kind": "brightness",
+      "factor": 0.7
+    },
+    {
+      "name": "brightness_130",
+      "kind": "brightness",
+      "factor": 1.3
+    },
+    {
+      "name": "contrast_070",
+      "kind": "contrast",
+      "factor": 0.7
+    },
+    {
+      "name": "contrast_130",
+      "kind": "contrast",
+      "factor": 1.3
+    },
+    {
+      "name": "gamma_070",
+      "kind": "gamma",
+      "factor": 0.7
+    },
+    {
+      "name": "gamma_140",
+      "kind": "gamma",
+      "factor": 1.4
+    }
+  ],
+  "training_conditions": [
+    {
+      "name": "brightness_085",
+      "kind": "brightness",
+      "factor": 0.85
+    },
+    {
+      "name": "brightness_115",
+      "kind": "brightness",
+      "factor": 1.15
+    },
+    {
+      "name": "contrast_085",
+      "kind": "contrast",
+      "factor": 0.85
+    },
+    {
+      "name": "contrast_115",
+      "kind": "contrast",
+      "factor": 1.15
+    }
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "categories": [
+    "bottle",
+    "cable",
+    "capsule",
+    "carpet",
+    "grid",
+    "hazelnut",
+    "leather",
+    "metal_nut",
+    "pill",
+    "screw",
+    "tile",
+    "toothbrush",
+    "transistor",
+    "wood",
+    "zipper"
+  ],
+  "development_categories": [
+    "bottle",
+    "cable",
+    "carpet"
+  ],
+  "extension_categories": [
+    "capsule",
+    "grid",
+    "hazelnut",
+    "leather",
+    "metal_nut",
+    "pill",
+    "screw",
+    "tile",
+    "toothbrush",
+    "transistor",
+    "wood",
+    "zipper"
+  ],
+  "reference_runs": {
+    "development": "results/metrics/adapter_full_20261102",
+    "extension": "results/metrics/mvtec_extension_20261103"
+  },
+  "inventory": "assets/mvtec_extension_files.json",
+  "data_validation": "assets/mvtec_extension_validation.json",
+  "data_root": "data/mvtec_ad",
+  "training": {
+    "steps": 1000,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "anchor_weight": 0.1,
+    "initialization_seed_offset": 5000,
+    "batch_seed_offset": 2000,
+    "split_seed_offset": 1000,
+    "checkpoint_rule": "Final fixed step only; no early stopping, tuning or refit from diagnostics/test results.",
+    "effective_center_patches": 512,
+    "effective_centers": 512,
+    "legacy_batch_size": 1024,
+    "batch_size": 1024,
+    "chunk_centers": 512,
+    "optimizer": "AdamW",
+    "foreach": false,
+    "loss": "illumination + 0.1 * clean-feature anchor; sum feature coordinates, mean 512 active centers",
+    "synthetic_defect_loss": false,
+    "bottleneck": 768,
+    "fit_images": 12,
+    "diagnostic_images": 4
+  },
+  "primary_metric": "Equal-category then equal-six-shift macro pixel AP within each paired seed. Differences are formed at category/seed/condition before aggregation.",
+  "category_change_rule": {
+    "metric": "six-shift macro pixel AP difference, averaged over paired seeds",
+    "threshold_percentage_points": 0.1,
+    "improved": "delta > +0.1 pp",
+    "tied": "-0.1 pp <= delta <= +0.1 pp",
+    "degraded": "delta < -0.1 pp",
+    "interpretation": "Predeclared practical reporting threshold; not a significance test."
+  },
+  "run_id": "a1_expanded_mlp768_full_20261116",
+  "branch": "codex/a1-expanded-mlp768-full",
+  "frozen_base_commit": "a52909f2d61923e6845c072a564472fdae256324",
+  "shots": [
+    16
+  ],
+  "arms": [
+    "A1",
+    "MLP768-16"
+  ],
+  "new_arms": [
+    "MLP768-16"
+  ],
+  "trainable_new_arms": [
+    "MLP768-16"
+  ],
+  "reused_arms": [
+    "A1"
+  ],
+  "expected_evaluations": 630,
+  "expected_reused_evaluations": 378,
+  "expected_new_evaluations": 252,
+  "expected_new_heads": 36,
+  "reference_capacity_run": "results/metrics/a1_capacity_data_cnn_20261111",
+  "reference_capacity_config": "configs/a1_capacity_data_cnn.json",
+  "reference_split": "results/metrics/a1_capacity_data_cnn_20261111/splits.json",
+  "reference_cache_manifest": "results/metrics/a1_capacity_data_cnn_20261111/normal_features.json",
+  "reference_cache_root": "runs/a1_capacity_data_cnn_20261111/normal_features",
+  "reference_visualization_selection": "results/metrics/anchor_ablation_20261102/qualitative_selection.json",
+  "reference_sha256": {
+    "configs/a1_capacity_data_cnn.json": "591aa5ca37683935c444aebaaaa07635fd1b0299171775468db08451e2526295",
+    "results/metrics/a1_capacity_data_cnn_20261111/splits.json": "6c4cd434057e948a18d667d3da7544d3bacce6339ef979452e30a14153512285",
+    "results/metrics/a1_capacity_data_cnn_20261111/normal_features.json": "2ff655c7d35511136afc7374072349f2cc0f1a44601a7d95043a99a2cea63481",
+    "results/metrics/a1_capacity_data_cnn_20261111/preflight.json": "d785704df551c5b4c95888edaa641317db0a19b767624009500cf22f36afe12f",
+    "results/metrics/a1_capacity_data_cnn_20261111/run.json": "d68ee5780260a066fdc2965b2c777e45ac8c550a07e0861cf052427a855a76b8",
+    "results/metrics/a1_capacity_data_cnn_20261111/verification.json": "08ccbce28f12fccbefc45496d775e8654f6faedc65d2f56ef7632e6045f3daba",
+    "results/metrics/anchor_ablation_20261102/qualitative_selection.json": "c0699e062782f7fcb6668ad2ce56a86bedd386f78ec2c28236dc3ae4f904b10e"
+  },
+  "architecture": {
+    "dimension": 384,
+    "bottleneck": 768,
+    "activation": "GELU",
+    "residual": true,
+    "output": "L2 normalization on feature dimension",
+    "output_initialization": "zero weight and bias",
+    "parameters": 590976,
+    "implementation": "Reuse unchanged src.defect_adapter.DefectAdapter(dimension=384,bottleneck=widths[arm]). Both widths use seed5000+seed and zero output projection; differently shaped parameters are not elementwise identical."
+  },
+  "fit_images_by_shots": {
+    "16": 12
+  },
+  "diagnostic_images_by_shots": {
+    "16": 4
+  },
+  "split_rule": "Filter the audited capacity splits to16 shots for all15 categories; preserve every ordered original12fit/4diagnostic/16reference set. Reuse original3-category wide fits; train only remaining12.",
+  "loss_variants": {
+    "A1": {
+      "illumination_target": "adapted_clean",
+      "anchor_weight": 0.1,
+      "formula": "mean(||h(z_t)-h(z)||^2) + 0.1 * mean(||h(z)-z||^2)"
+    },
+    "MLP768-16": {
+      "illumination_target": "adapted_clean",
+      "anchor_weight": 0.1,
+      "formula": "mean(||h(z_t)-h(z)||^2) + 0.1 * mean(||h(z)-z||^2)"
+    }
+  },
+  "diagnostics": {
+    "images": "Only the original four diagnostic normal images; never used for fitting, checkpoint selection or hyperparameter selection.",
+    "unweighted_components": {
+      "illumination": "mean(||h(z_t)-h(z)||^2)",
+      "anchor": "mean(||h(z)-z||^2)",
+      "fixed_teacher_alignment": "mean(||h(z_t)-z||^2)"
+    },
+    "conditions": "The same four training photometric conditions, applied to held-out diagnostic normal images."
+  },
+  "comparisons": [
+    [
+      "MLP768-16",
+      "A1"
+    ]
+  ],
+  "visualization_rule": {
+    "seed": 0,
+    "conditions": [
+      "gamma_140"
+    ],
+    "selection": "Reuse all six fixed original anchor-ablation cases: recorded median-gain and worst-gain image for each of bottle/cable/carpet. Selection predates this experiment; do not select from new results.",
+    "methods": [
+      "A1",
+      "MLP768-16"
+    ],
+    "scale": "Per fixed case, vmin=0 and vmax=max of both full score maps. Both methods share the same raw-distance color range; no per-method rescaling.",
+    "interpretation": "Existing post-hoc illustrative cases only, not unbiased samples or a substitute for full paired metrics.",
+    "mode": "reuse_original_six_fixed_case_outputs",
+    "reference_directory": "results/metrics/a1_expanded_mlp768_20261116/visualizations"
+  },
+  "scope": "Complete the fixed MLP768 architecture on remaining12 categories; combine252 new cells with315 verified A1 and63 verified original MLP768 cells for630 total. No new architecture,loss,tuning or automatic report/model replacement.",
+  "restrictions": [
+    "Preserve original A0,A1,paper,checkpoints,code and every old result. Independent codex/a1-expanded-mlp768-full branch and output directories; inspect existing tasks before launch.",
+    "Only extend the frozen384->768->384 MLP768 architecture to remaining12 categories. Keep seed5000+seed,GELU,residual,outputL2 normalization and zero output projection.",
+    "Use existing Windowsvenv/RTX4060,DINOv2-S/14,384D and identical weights,feature extraction,preprocessing,rotations,exactsearch,imagescore andmapprocessing. Derive grids and bank counts from audited category-specific records.",
+    "All15 categories,complete official tests,seeds0/1/2,original12fit/4diagnostic/all16reference images; no resampling,cross-category training or changed image budget.",
+    "Keep1000fixedsteps,AdamW lr.001 wd.0001,512activecenters,legacy1024RNGdraws,fourphotometricviews,illumination+.1anchor loss; no synthetic loss.",
+    "No tests/defect labels for fitting,tuning,earlystopping orcheckpointselection. Saveall36 new finalheads before252 new evaluations. Diagnostics never choose settings.",
+    "Reuse315 A1 and63 oldMLP768 cells only after identity and numeric checks. Reuse is not an independent repetition; failed/retry records remain.",
+    "Pair category/seed/condition before equal-category/equal-condition means. Reportall15,original3 andremaining12 separately; every category was previously inspected by prior studies, not an unseen validation set.",
+    "Use +/-0.1pp category band as a practical descriptive rule, not significance. Three seeds share tests; no selective category or condition reporting.",
+    "Reuse explicitly scoped original3-category paired cost benchmark and six fixed visual cases. It is not a new15-category cost estimate or end-to-end latency.",
+    "Assess final architecture only after completed audit using full paired evidence,categorycoverage,secondarymetrics andcost. Preserve prior final submission until that assessment; any subsequent ablation must be separately fixed.",
+    "Keep datasets,weights,caches andcheckpoints offGitHub. Publish configs,necessaryscripts,smalltables,diagnostics,audits andcompleteanalysis."
+  ],
+  "widths": {
+    "A1": 32,
+    "MLP768-16": 768
+  },
+  "parameter_counts": {
+    "A1": 24992,
+    "MLP768-16": 590976
+  },
+  "forward_chunk": 8192,
+  "cost_protocol": {
+    "scoring_categories": [
+      "bottle",
+      "cable",
+      "carpet"
+    ],
+    "scoring_seeds": [
+      0
+    ],
+    "scoring_condition": "clean",
+    "scoring_selection": "First eight lexicographically ordered official test images per category; identical cached input features for both arms.",
+    "scoring_images_per_category": 8,
+    "scoring_repeats": 2,
+    "method_order": "Alternate A1/MLP768-16 order across repetitions; synchronize CUDA around identical timed scopes.",
+    "scoring_scope": "Cached query adapter plus exact nearest-neighbor scoring only; exclude encoder extraction, transfers, bank construction and localization-map postprocessing. Not end-to-end inference.",
+    "training_clone_steps": 5,
+    "training_scope": "Separate timing clones with the fixed normal center schedule and same optimizer/batch normalization; never replace or choose final 1000-step checkpoints. Report actual nine-head training times separately.",
+    "peak_memory": "Reset CUDA peak statistics separately for each measured method/scope; record allocated and reserved MiB.",
+    "mode": "reuse_verified_original_three_category_benchmark",
+    "reference_file": "results/metrics/a1_expanded_mlp768_20261116/paired_benchmark.json",
+    "interpretation": "Historical same-session paired benchmark on original3 only; not remeasured and not presented as a15-category estimate."
+  },
+  "new_categories": [
+    "capsule",
+    "grid",
+    "hazelnut",
+    "leather",
+    "metal_nut",
+    "pill",
+    "screw",
+    "tile",
+    "toothbrush",
+    "transistor",
+    "wood",
+    "zipper"
+  ],
+  "reused_wide_categories": [
+    "bottle",
+    "cable",
+    "carpet"
+  ],
+  "expected_reused_A1_evaluations": 315,
+  "expected_reused_wide_evaluations": 63,
+  "expected_reused_A1_heads": 45,
+  "expected_reused_wide_heads": 9,
+  "reference_wide_run": "results/metrics/a1_expanded_mlp768_20261116",
+  "reference_wide_config": "configs/a1_expanded_mlp768.json",
+  "reference_wide_raw_run": "runs/a1_expanded_mlp768_20261116",
+  "selection_policy": {
+    "status": "pending_full_audited_evidence",
+    "primary_metric": "all15 equal-category/equal-six-shift pixel AP paired difference",
+    "report_required": [
+      "original3 andremaining12 separate aggregates",
+      "all3 paired seedmeans andsampleSD",
+      "all15 categorydirections using existing+/-0.1ppband",
+      "cleanpixelAP andclean/shiftimageAUROC",
+      "actual costs withtiming scope"
+    ],
+    "interpretation": "Architecture choice is an exploratory comparison on previously evaluated categories, not independent confirmation or aSOTAclaim. Do not alter settings or drop combinations after partial results."
+  },
+  "reference_wide_sha256": {
+    "configs/a1_expanded_mlp768.json": "7c9398cc28f55eb84e7910b3c0b388718dd249478069949f3ec3bd239da05fed",
+    "results/metrics/a1_expanded_mlp768_20261116/config.json": "7c9398cc28f55eb84e7910b3c0b388718dd249478069949f3ec3bd239da05fed",
+    "results/metrics/a1_expanded_mlp768_20261116/run.json": "dfdb8b84bd83c35aff9ee2143b601cf924a0c4b2fd47d6c20fab3a268e675315",
+    "results/metrics/a1_expanded_mlp768_20261116/preflight.json": "df9724fbff165eb7dc58d06fe1ba2ec149cfe170748c3d49201ec6498e130ee2",
+    "results/metrics/a1_expanded_mlp768_20261116/verification.json": "9348fa77e289befbd3a67df2bafe91a3bdfcad192da54b1692c1ebe9e11231dc",
+    "results/metrics/a1_expanded_mlp768_20261116/splits.json": "f7fcce1a4be419bd9dacaa5f3ef71d72cb639ed6700c8733a4079ee09f2f4550",
+    "results/metrics/a1_expanded_mlp768_20261116/normal_features.json": "7f45d6d1473a3ef0e9f220a115fdc6b3350bf3fa410772d0d1495763118a7775",
+    "results/metrics/a1_expanded_mlp768_20261116/metrics.csv": "5efba5f8e511a789eede0724e40f7c1864032146006f3f4f65497576d196f866",
+    "results/metrics/a1_expanded_mlp768_20261116/paired_benchmark.json": "d660a49a6dac2b60a3a009a8950147bb5ad4c1085ec96e32ebd6529f23d8fd53",
+    "results/metrics/a1_expanded_mlp768_20261116/pairing_verification.json": "efafa18b16b8dd3799a26f9bf0ad9a7fb765ac1e0b0970a39c27cf95f5e2d916",
+    "results/metrics/a1_expanded_mlp768_20261116/training/bottle_s0_MLP768-16.json": "d4eccc12d4ff2cfb668f6a6e0db385be1ad14998f30107bad07b5f6b9e06ca37",
+    "results/metrics/a1_expanded_mlp768_20261116/units/bottle_s0_MLP768-16.json": "af6761c61c3dc9d4ea5c3a8944946bd9745c4819a046eabcbde751ad1c2dff90",
+    "results/metrics/a1_expanded_mlp768_20261116/units/bottle_s0_MLP768-16_scores.csv": "a06f5367a76180f4246088ad4ea85b188f6e0943480905ccdc2cf5594b1f31ca",
+    "results/metrics/a1_expanded_mlp768_20261116/training/bottle_s1_MLP768-16.json": "cf4213204c21c82ba79cfc336190aaafee99923ea67403d5f78fb131356dac20",
+    "results/metrics/a1_expanded_mlp768_20261116/units/bottle_s1_MLP768-16.json": "eb41a26032fe180b450dcdee08a7daddd16bf872829b6ea2f1a9236c233a0380",
+    "results/metrics/a1_expanded_mlp768_20261116/units/bottle_s1_MLP768-16_scores.csv": "2b96ad9b3f76ecc3d5a4ea8fb830a3248a5af78f9a4e71d66e7057fc7d95052c",
+    "results/metrics/a1_expanded_mlp768_20261116/training/bottle_s2_MLP768-16.json": "fbf6c1aa66631be16ce9b5a57ab370eac879b8e163a4522f674d6194038def99",
+    "results/metrics/a1_expanded_mlp768_20261116/units/bottle_s2_MLP768-16.json": "5ff249f8b1ff42c23d769af56cba4182e6bfffe75581e7bc8eaa55025dac9d44",
+    "results/metrics/a1_expanded_mlp768_20261116/units/bottle_s2_MLP768-16_scores.csv": "8226a2e5e516c33122e7d4a25dd4d0b8afdb0eff09b7a9b802445310d1a69c57",
+    "results/metrics/a1_expanded_mlp768_20261116/training/cable_s0_MLP768-16.json": "01107acab085ab946e84f062a8a05b2500e002c78e2a9d107b1557059815a2f2",
+    "results/metrics/a1_expanded_mlp768_20261116/units/cable_s0_MLP768-16.json": "9c8cb0051aa934a0fb73e52394114debb0f8781e5c4cef062dd84a5044f1dc4c",
+    "results/metrics/a1_expanded_mlp768_20261116/units/cable_s0_MLP768-16_scores.csv": "27a13b5207610c27e696b639384962148c7fa00ee32864fdbe6ccf4b6204a6fc",
+    "results/metrics/a1_expanded_mlp768_20261116/training/cable_s1_MLP768-16.json": "3bacb4d6dd89a996a88b3d82282cee3ee6dbbfbf6a77cb33c457cd28e36ba50e",
+    "results/metrics/a1_expanded_mlp768_20261116/units/cable_s1_MLP768-16.json": "1183d89d2b2af86ea5ee665cb282f0e61cf30ffc5d5aac8ad4d1ed4140a33143",
+    "results/metrics/a1_expanded_mlp768_20261116/units/cable_s1_MLP768-16_scores.csv": "648420ba7d1190a0c3a75d02df24345e91ce5bbee30bfeaaa0ccdac76c71d883",
+    "results/metrics/a1_expanded_mlp768_20261116/training/cable_s2_MLP768-16.json": "cf75fafa6ea8994761a981e0dd281049e78aa89945b2a5227652e60601071b6c",
+    "results/metrics/a1_expanded_mlp768_20261116/units/cable_s2_MLP768-16.json": "68e8f56212a1dea3e2c0a0bd2a19d6e4b9ef5a49d77b4aa957f255563e3d146c",
+    "results/metrics/a1_expanded_mlp768_20261116/units/cable_s2_MLP768-16_scores.csv": "2ba69cafbc0ce5226672654257e8e91e5c105de31bd59341261d59ba2b8196d2",
+    "results/metrics/a1_expanded_mlp768_20261116/training/carpet_s0_MLP768-16.json": "920b9750ff0d49069e9d96413fac377877e1b474b20af4d94da164c202fe178d",
+    "results/metrics/a1_expanded_mlp768_20261116/units/carpet_s0_MLP768-16.json": "a37b7d64941d4ab7a8eba481cabf247ba58e45f73ddbf1b18c0324ce57512e23",
+    "results/metrics/a1_expanded_mlp768_20261116/units/carpet_s0_MLP768-16_scores.csv": "a42524ad34e333114a3e885409c39b56e5e9695d7321bf0eea3af8a6dd553fd6",
+    "results/metrics/a1_expanded_mlp768_20261116/training/carpet_s1_MLP768-16.json": "fcd3dec9f8f59fbc5c744a761561d5120b82283e22177318d733c7bf68dc639d",
+    "results/metrics/a1_expanded_mlp768_20261116/units/carpet_s1_MLP768-16.json": "a2c6ef00ab191c09c9aa996dcdb9161041e6e35add2d6e64195ea750dd0c6c7a",
+    "results/metrics/a1_expanded_mlp768_20261116/units/carpet_s1_MLP768-16_scores.csv": "e8f77cc636cd459d811050ce0215c28bad52597c83a07fe59b0e547c502dafb2",
+    "results/metrics/a1_expanded_mlp768_20261116/training/carpet_s2_MLP768-16.json": "1ddd229c34860ebf1ff4fc94bfbce7d4146564ccabac24bbf4e325849e2a20cb",
+    "results/metrics/a1_expanded_mlp768_20261116/units/carpet_s2_MLP768-16.json": "eadab5e774805b0170ff77251a0cfdc28e82dd44d1b7a6d1212c04b73dd6c9a7",
+    "results/metrics/a1_expanded_mlp768_20261116/units/carpet_s2_MLP768-16_scores.csv": "6492f9d782d3394799a13b01f458386e41f2060d5e27fa76069e9fcd96c12472"
+  }
+}

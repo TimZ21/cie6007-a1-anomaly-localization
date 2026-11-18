@@ -1,0 +1,134 @@
+{
+  "categories": [
+    "bottle",
+    "cable",
+    "carpet"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "shots": [
+    16
+  ],
+  "methods": [
+    "A1-no-anchor"
+  ],
+  "primary_method": "A1-no-anchor",
+  "conditions": [
+    {
+      "name": "clean",
+      "kind": "clean",
+      "factor": 1.0
+    },
+    {
+      "name": "brightness_070",
+      "kind": "brightness",
+      "factor": 0.7
+    },
+    {
+      "name": "brightness_130",
+      "kind": "brightness",
+      "factor": 1.3
+    },
+    {
+      "name": "contrast_070",
+      "kind": "contrast",
+      "factor": 0.7
+    },
+    {
+      "name": "contrast_130",
+      "kind": "contrast",
+      "factor": 1.3
+    },
+    {
+      "name": "gamma_070",
+      "kind": "gamma",
+      "factor": 0.7
+    },
+    {
+      "name": "gamma_140",
+      "kind": "gamma",
+      "factor": 1.4
+    }
+  ],
+  "training_conditions": [
+    {
+      "name": "brightness_085",
+      "kind": "brightness",
+      "factor": 0.85
+    },
+    {
+      "name": "brightness_115",
+      "kind": "brightness",
+      "factor": 1.15
+    },
+    {
+      "name": "contrast_085",
+      "kind": "contrast",
+      "factor": 0.85
+    },
+    {
+      "name": "contrast_115",
+      "kind": "contrast",
+      "factor": 1.15
+    }
+  ],
+  "training": {
+    "fit_images": 12,
+    "diagnostic_images": 4,
+    "bottleneck": 32,
+    "steps": 1000,
+    "batch_size": 1024,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "anchor_weight": 0.0,
+    "defect_weight": 1.0,
+    "initialization_seed_offset": 5000,
+    "batch_seed_offset": 2000,
+    "split_seed_offset": 1000,
+    "checkpoint_rule": "Final fixed step only; no early stopping, tuning or refit from diagnostics/test results."
+  },
+  "backbone": "dinov2_vits14",
+  "input_size": 448,
+  "rotations": [
+    0,
+    45,
+    90,
+    135,
+    180,
+    225,
+    270,
+    315
+  ],
+  "bank_vectors": 131072,
+  "search_chunk": 128,
+  "weights_sha256": "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9",
+  "base_commit": "e8b0c28e485ee4c815599a8d473190f1b79b8517",
+  "parent_commit": "e4855d4edfc49161c2b31f774e9231041a105525",
+  "primary_metric": "Equal-category/condition macro pixel AP over the six shifts within each paired seed",
+  "scope": "Single predeclared ablation of anchor weight 0.1 to 0, after A1 selection; previously inspected categories. Preserve A1; no retuning or SOTA claim.",
+  "restrictions": [
+    "Reuse unchanged pilot fit_one with method selector A1 and anchor_weight=0; no other training/feature/scoring change.",
+    "Reuse hashed normal-only feature caches. Verify identical initialization, batches, references and final step against A1.",
+    "All nine heads are fitted before separate evaluation. Reuse published, audited A0/A1 controls; disclose reuse and do not compare cross-session latency causally.",
+    "No early stopping, sweep, refit or new method selection; report all outcomes.",
+    "Preserve old code/config/results and branches."
+  ],
+  "expected_evaluations": 63,
+  "comparison_methods": [
+    "A0",
+    "A1",
+    "A1-no-anchor"
+  ],
+  "reference_run": "results/metrics/adapter_full_20261102",
+  "qualitative": {
+    "seed": 0,
+    "condition": "gamma_140",
+    "candidates": "Anomalous test images only in each category",
+    "selection": "Rank A1-minus-A0 per-image pixel AP; choose worst, then closest-to-median remaining image; lexicographic path breaks ties. No-anchor scores are never used to select examples.",
+    "display": "Input, mask, A0, A1, A1-no-anchor; same raw-distance color range for all three methods in a row (0 to joint maximum). No per-method normalization.",
+    "interpretation": "Post-hoc descriptive examples, not representative rates or tuning data."
+  }
+}

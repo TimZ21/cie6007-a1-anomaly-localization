@@ -1,0 +1,3 @@
+arm,categories,repetitions_per_category,images_per_repeat,scoring_s_macro_ms_per_image,adapter_s_macro_ms_per_image,bank_transform_s_mean,peak_cuda_allocated_mib,peak_cuda_reserved_mib,paired_training_ms_per_step,paired_training_peak_cuda_allocated_mib,paired_training_peak_cuda_reserved_mib
+A1,3,2,8,39.985460423243545,1.5455083412234671,0.028929950009721022,740.9892578125,956.0,17.449999996460974,453.734375,460.0
+MLP768-16,3,2,8,40.48833333702836,1.4034708353089325,0.045562716656907774,743.89794921875,1002.0,20.33979333161066,467.46044921875,480.0

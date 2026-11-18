@@ -1,0 +1,136 @@
+{
+  "selection_rule": {
+    "seed": 0,
+    "condition": "gamma_140",
+    "candidates": "Anomalous test images only in each category",
+    "selection": "Rank A1-minus-A0 per-image pixel AP; choose worst, then closest-to-median remaining image; lexicographic path breaks ties. No-anchor scores are never used to select examples.",
+    "display": "Input, mask, A0, A1, A1-no-anchor; same raw-distance color range for all three methods in a row (0 to joint maximum). No per-method normalization.",
+    "interpretation": "Post-hoc descriptive examples, not representative rates or tuning data."
+  },
+  "examples": [
+    {
+      "role": "Closest to median gain",
+      "category": "bottle",
+      "path": "bottle/test/broken_small/021.png",
+      "index": 41,
+      "A0_pixel_ap": 0.9739137498507606,
+      "A1_pixel_ap": 0.9731333880074167,
+      "A1_minus_A0_pixel_ap": -0.0007803618433439574,
+      "seed": 0,
+      "condition": "gamma_140",
+      "per_image_pixel_ap": {
+        "A0": 0.9739137498507606,
+        "A1": 0.9731333880074167,
+        "A1-no-anchor": 0.9357623837025094
+      },
+      "display_vmin": 0.0,
+      "display_vmax": 0.4052891191582238,
+      "input_sha256": "8fd65fc5519cf685764d5f87f3ad1cfe088e7c54e3a54ad68b5ab3df120a084d"
+    },
+    {
+      "role": "Worst gain",
+      "category": "bottle",
+      "path": "bottle/test/broken_large/003.png",
+      "index": 3,
+      "A0_pixel_ap": 0.8862870862219643,
+      "A1_pixel_ap": 0.8635235111188968,
+      "A1_minus_A0_pixel_ap": -0.02276357510306748,
+      "seed": 0,
+      "condition": "gamma_140",
+      "per_image_pixel_ap": {
+        "A0": 0.8862870862219643,
+        "A1": 0.8635235111188968,
+        "A1-no-anchor": 0.8347094006161495
+      },
+      "display_vmin": 0.0,
+      "display_vmax": 0.3595945392034589,
+      "input_sha256": "b4797ce35dd407629e29dd199cd6e497f0a706a1ddd72ace226f30858d3199c4"
+    },
+    {
+      "role": "Closest to median gain",
+      "category": "cable",
+      "path": "cable/test/missing_cable/004.png",
+      "index": 122,
+      "A0_pixel_ap": 0.9518080836106375,
+      "A1_pixel_ap": 0.9592519263817199,
+      "A1_minus_A0_pixel_ap": 0.007443842771082343,
+      "seed": 0,
+      "condition": "gamma_140",
+      "per_image_pixel_ap": {
+        "A0": 0.9518080836106375,
+        "A1": 0.9592519263817199,
+        "A1-no-anchor": 0.9307631271463221
+      },
+      "display_vmin": 0.0,
+      "display_vmax": 0.44749852129233114,
+      "input_sha256": "743565aae35c24988caa77968f11031a8323f01fe3503afc8c44e39c9d83e3e7"
+    },
+    {
+      "role": "Worst gain",
+      "category": "cable",
+      "path": "cable/test/cut_outer_insulation/008.png",
+      "index": 58,
+      "A0_pixel_ap": 0.5942915478510299,
+      "A1_pixel_ap": 0.35522531114107075,
+      "A1_minus_A0_pixel_ap": -0.23906623670995913,
+      "seed": 0,
+      "condition": "gamma_140",
+      "per_image_pixel_ap": {
+        "A0": 0.5942915478510299,
+        "A1": 0.35522531114107075,
+        "A1-no-anchor": 0.21092724415035766
+      },
+      "display_vmin": 0.0,
+      "display_vmax": 0.2672175775770574,
+      "input_sha256": "7b7c9949abcbef131aeb7b7f64f41450eb7fe71a331d61020b9909fa9f9710e5"
+    },
+    {
+      "role": "Closest to median gain",
+      "category": "carpet",
+      "path": "carpet/test/metal_contamination/001.png",
+      "index": 82,
+      "A0_pixel_ap": 0.6413314505167004,
+      "A1_pixel_ap": 0.6481930763762361,
+      "A1_minus_A0_pixel_ap": 0.006861625859535758,
+      "seed": 0,
+      "condition": "gamma_140",
+      "per_image_pixel_ap": {
+        "A0": 0.6413314505167004,
+        "A1": 0.6481930763762361,
+        "A1-no-anchor": 0.6573905837491613
+      },
+      "display_vmin": 0.0,
+      "display_vmax": 0.486471082920104,
+      "input_sha256": "45ba93dc86d0f769cdf12e40e512bf0f40fcdafaca967efd33819027d9669f67"
+    },
+    {
+      "role": "Worst gain",
+      "category": "carpet",
+      "path": "carpet/test/metal_contamination/016.png",
+      "index": 97,
+      "A0_pixel_ap": 0.6719309796379315,
+      "A1_pixel_ap": 0.538972139289301,
+      "A1_minus_A0_pixel_ap": -0.13295884034863048,
+      "seed": 0,
+      "condition": "gamma_140",
+      "per_image_pixel_ap": {
+        "A0": 0.6719309796379315,
+        "A1": 0.538972139289301,
+        "A1-no-anchor": 0.6892510550906156
+      },
+      "display_vmin": 0.0,
+      "display_vmax": 0.47475603995694193,
+      "input_sha256": "794c8e66720909cada16455d2e8929a68db45f9d102f183fe30857ebfcd128f7"
+    }
+  ],
+  "figure_sha256": {
+    "results/figures/anchor_ablation_20261102/bottle_localization.png": "b13201e8845e42c9c7700a95fa30f63e2e59b5c34d8e7e96a1cdfb6eca11e14a",
+    "results/figures/anchor_ablation_20261102/bottle_localization.pdf": "1c03edf515f8ea33f6400712f99553d50ab6aa0d73c5da6d5264b646724efb77",
+    "results/figures/anchor_ablation_20261102/cable_localization.png": "809ed34a177ae3ab9860f6314c08bab95f0ecb30ea9a69b7fa2ad9f5117fe4c6",
+    "results/figures/anchor_ablation_20261102/cable_localization.pdf": "90c04743acea6d1a1c6d7f9474a43ac08435728edabb9a4b17749775cbcf2c61",
+    "results/figures/anchor_ablation_20261102/carpet_localization.png": "7568e10f021495245b72e28bcedd34c9e32ac560a90ebf49c4544f293c8a00f8",
+    "results/figures/anchor_ablation_20261102/carpet_localization.pdf": "cd98930210240ecd861eff701105514a0d326a82e109073504b6065ef64464eb"
+  },
+  "attribution": "MVTec AD images: Bergmann et al.; CC BY-NC-SA 4.0. Derived visualizations for noncommercial coursework.",
+  "limits": "Post-hoc, anomalous images only. Per-image AP is a selection/display statistic, distinct from category-level pooled pixel AP. Raw scores are uncalibrated; no threshold is fitted. A shared row color range is not a calibrated comparison of defect probability."
+}

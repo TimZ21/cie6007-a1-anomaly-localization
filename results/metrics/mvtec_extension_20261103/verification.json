@@ -1,0 +1,150 @@
+{
+  "status": "passed",
+  "utc": "2026-11-03T11:57:34.900305+00:00",
+  "new_evaluations": 504,
+  "new_image_rows": 57750,
+  "reused_evaluations": 126,
+  "combined_evaluations": 630,
+  "reused_audit_sha256": "9c22e315368457d8ead6bb5e32ca84a6e8f5220673bbf4f4c6aa580398a52fb9",
+  "preflight_sha256": "35f3b2226899992a1c9c38007364649c89f62cc0f6bb0596260b87c4844b53a1",
+  "old_control_bridge_max_error": {
+    "A0": 0.0,
+    "A1": 0.0
+  },
+  "max_errors": {
+    "independent_auroc": 1.1102230246251565e-16,
+    "reconstructed_ap": 0.0,
+    "patch_to_image": 0.0,
+    "bank": 0.0,
+    "faiss": 1.0468065738677979e-06,
+    "diagnostics": 0.0,
+    "zero_adapter_feature": 8.940696716308594e-08
+  },
+  "independent_sklearn_clean_seed0": [
+    {
+      "category": "capsule",
+      "method": "A0",
+      "error": 1.1102230246251565e-16
+    },
+    {
+      "category": "capsule",
+      "method": "A1",
+      "error": 1.1102230246251565e-16
+    },
+    {
+      "category": "grid",
+      "method": "A0",
+      "error": 5.551115123125783e-17
+    },
+    {
+      "category": "grid",
+      "method": "A1",
+      "error": 0.0
+    },
+    {
+      "category": "hazelnut",
+      "method": "A0",
+      "error": 0.0
+    },
+    {
+      "category": "hazelnut",
+      "method": "A1",
+      "error": 0.0
+    },
+    {
+      "category": "leather",
+      "method": "A0",
+      "error": 5.551115123125783e-17
+    },
+    {
+      "category": "leather",
+      "method": "A1",
+      "error": 0.0
+    },
+    {
+      "category": "metal_nut",
+      "method": "A0",
+      "error": 1.1102230246251565e-16
+    },
+    {
+      "category": "metal_nut",
+      "method": "A1",
+      "error": 1.1102230246251565e-16
+    },
+    {
+      "category": "pill",
+      "method": "A0",
+      "error": 0.0
+    },
+    {
+      "category": "pill",
+      "method": "A1",
+      "error": 0.0
+    },
+    {
+      "category": "screw",
+      "method": "A0",
+      "error": 0.0
+    },
+    {
+      "category": "screw",
+      "method": "A1",
+      "error": 5.551115123125783e-17
+    },
+    {
+      "category": "tile",
+      "method": "A0",
+      "error": 2.220446049250313e-16
+    },
+    {
+      "category": "tile",
+      "method": "A1",
+      "error": 0.0
+    },
+    {
+      "category": "toothbrush",
+      "method": "A0",
+      "error": 0.0
+    },
+    {
+      "category": "toothbrush",
+      "method": "A1",
+      "error": 0.0
+    },
+    {
+      "category": "transistor",
+      "method": "A0",
+      "error": 0.0
+    },
+    {
+      "category": "transistor",
+      "method": "A1",
+      "error": 0.0
+    },
+    {
+      "category": "wood",
+      "method": "A0",
+      "error": 1.1102230246251565e-16
+    },
+    {
+      "category": "wood",
+      "method": "A1",
+      "error": 0.0
+    },
+    {
+      "category": "zipper",
+      "method": "A0",
+      "error": 1.1102230246251565e-16
+    },
+    {
+      "category": "zipper",
+      "method": "A1",
+      "error": 5.551115123125783e-17
+    }
+  ],
+  "source_config_inventory_split_cache_checkpoint_bank_scores_complete_grid": "passed",
+  "unchanged_A1_initialization_batches_partition_final_step_and_diagnostics": "passed",
+  "all_36_new_heads_fitted_before_new_category_evaluation": true,
+  "old_development_categories_reused_separately": true,
+  "audit_elapsed_s": 2424.9274214000034
+}

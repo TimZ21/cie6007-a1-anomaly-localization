@@ -1,0 +1,268 @@
+{
+  "backbone": "dinov2_vits14",
+  "input_size": 448,
+  "rotations": [
+    0,
+    45,
+    90,
+    135,
+    180,
+    225,
+    270,
+    315
+  ],
+  "search_chunk": 128,
+  "weights_sha256": "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9",
+  "conditions": [
+    {
+      "name": "clean",
+      "kind": "clean",
+      "factor": 1.0
+    },
+    {
+      "name": "brightness_070",
+      "kind": "brightness",
+      "factor": 0.7
+    },
+    {
+      "name": "brightness_130",
+      "kind": "brightness",
+      "factor": 1.3
+    },
+    {
+      "name": "contrast_070",
+      "kind": "contrast",
+      "factor": 0.7
+    },
+    {
+      "name": "contrast_130",
+      "kind": "contrast",
+      "factor": 1.3
+    },
+    {
+      "name": "gamma_070",
+      "kind": "gamma",
+      "factor": 0.7
+    },
+    {
+      "name": "gamma_140",
+      "kind": "gamma",
+      "factor": 1.4
+    }
+  ],
+  "training_conditions": [
+    {
+      "name": "brightness_085",
+      "kind": "brightness",
+      "factor": 0.85
+    },
+    {
+      "name": "brightness_115",
+      "kind": "brightness",
+      "factor": 1.15
+    },
+    {
+      "name": "contrast_085",
+      "kind": "contrast",
+      "factor": 0.85
+    },
+    {
+      "name": "contrast_115",
+      "kind": "contrast",
+      "factor": 1.15
+    }
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "categories": [
+    "bottle",
+    "cable",
+    "carpet"
+  ],
+  "development_categories": [
+    "bottle",
+    "cable",
+    "carpet"
+  ],
+  "extension_categories": [],
+  "reference_runs": {
+    "development": "results/metrics/adapter_full_20261102",
+    "extension": "results/metrics/mvtec_extension_20261103"
+  },
+  "inventory": "assets/mvtec_extension_files.json",
+  "data_validation": "assets/mvtec_extension_validation.json",
+  "data_root": "data/mvtec_ad",
+  "training": {
+    "steps": 1000,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "anchor_weight": 0.1,
+    "initialization_seed_offset": 5000,
+    "batch_seed_offset": 2000,
+    "split_seed_offset": 1000,
+    "checkpoint_rule": "Final fixed step only; no early stopping, tuning or refit from diagnostics/test results.",
+    "effective_center_patches": 512,
+    "effective_centers": 512,
+    "legacy_batch_size": 1024,
+    "batch_size": 1024,
+    "chunk_centers": 512,
+    "optimizer": "AdamW",
+    "foreach": false,
+    "loss": "illumination + 0.1 * clean-feature anchor; sum feature coordinates, mean 512 active centers",
+    "synthetic_defect_loss": false,
+    "bottleneck": 768,
+    "fit_images": 12,
+    "diagnostic_images": 4
+  },
+  "primary_metric": "Equal-category then equal-six-shift macro pixel AP within each paired seed. Differences are formed at category/seed/condition before aggregation.",
+  "category_change_rule": {
+    "metric": "six-shift macro pixel AP difference, averaged over paired seeds",
+    "threshold_percentage_points": 0.1,
+    "improved": "delta > +0.1 pp",
+    "tied": "-0.1 pp <= delta <= +0.1 pp",
+    "degraded": "delta < -0.1 pp",
+    "interpretation": "Predeclared practical reporting threshold; not a significance test."
+  },
+  "run_id": "a1_expanded_mlp768_20261116",
+  "branch": "codex/a1-expanded-mlp768",
+  "frozen_base_commit": "a1350f52500af2c83340a72c71cdb9dd183acd23",
+  "shots": [
+    16
+  ],
+  "arms": [
+    "A1",
+    "MLP768-16"
+  ],
+  "new_arms": [
+    "MLP768-16"
+  ],
+  "trainable_new_arms": [
+    "MLP768-16"
+  ],
+  "reused_arms": [
+    "A1"
+  ],
+  "expected_evaluations": 126,
+  "expected_reused_evaluations": 63,
+  "expected_new_evaluations": 63,
+  "expected_new_heads": 9,
+  "reference_capacity_run": "results/metrics/a1_capacity_data_cnn_20261111",
+  "reference_capacity_config": "configs/a1_capacity_data_cnn.json",
+  "reference_split": "results/metrics/a1_capacity_data_cnn_20261111/splits.json",
+  "reference_cache_manifest": "results/metrics/a1_capacity_data_cnn_20261111/normal_features.json",
+  "reference_cache_root": "runs/a1_capacity_data_cnn_20261111/normal_features",
+  "reference_visualization_selection": "results/metrics/anchor_ablation_20261102/qualitative_selection.json",
+  "reference_sha256": {
+    "configs/a1_capacity_data_cnn.json": "591aa5ca37683935c444aebaaaa07635fd1b0299171775468db08451e2526295",
+    "results/metrics/a1_capacity_data_cnn_20261111/splits.json": "6c4cd434057e948a18d667d3da7544d3bacce6339ef979452e30a14153512285",
+    "results/metrics/a1_capacity_data_cnn_20261111/normal_features.json": "2ff655c7d35511136afc7374072349f2cc0f1a44601a7d95043a99a2cea63481",
+    "results/metrics/a1_capacity_data_cnn_20261111/preflight.json": "d785704df551c5b4c95888edaa641317db0a19b767624009500cf22f36afe12f",
+    "results/metrics/a1_capacity_data_cnn_20261111/run.json": "d68ee5780260a066fdc2965b2c777e45ac8c550a07e0861cf052427a855a76b8",
+    "results/metrics/a1_capacity_data_cnn_20261111/verification.json": "08ccbce28f12fccbefc45496d775e8654f6faedc65d2f56ef7632e6045f3daba",
+    "results/metrics/anchor_ablation_20261102/qualitative_selection.json": "c0699e062782f7fcb6668ad2ce56a86bedd386f78ec2c28236dc3ae4f904b10e"
+  },
+  "architecture": {
+    "dimension": 384,
+    "bottleneck": 768,
+    "activation": "GELU",
+    "residual": true,
+    "output": "L2 normalization on feature dimension",
+    "output_initialization": "zero weight and bias",
+    "parameters": 590976,
+    "implementation": "Reuse unchanged src.defect_adapter.DefectAdapter(dimension=384,bottleneck=widths[arm]). Both widths use seed5000+seed and zero output projection; differently shaped parameters are not elementwise identical."
+  },
+  "fit_images_by_shots": {
+    "16": 12
+  },
+  "diagnostic_images_by_shots": {
+    "16": 4
+  },
+  "split_rule": "Filter the frozen capacity splits to bottle/cable/carpet, shots16 and seeds0/1/2. Preserve all nine original ordered reference/fit/diagnostic lists. No new sampling or data.",
+  "loss_variants": {
+    "A1": {
+      "illumination_target": "adapted_clean",
+      "anchor_weight": 0.1,
+      "formula": "mean(||h(z_t)-h(z)||^2) + 0.1 * mean(||h(z)-z||^2)"
+    },
+    "MLP768-16": {
+      "illumination_target": "adapted_clean",
+      "anchor_weight": 0.1,
+      "formula": "mean(||h(z_t)-h(z)||^2) + 0.1 * mean(||h(z)-z||^2)"
+    }
+  },
+  "diagnostics": {
+    "images": "Only the original four diagnostic normal images; never used for fitting, checkpoint selection or hyperparameter selection.",
+    "unweighted_components": {
+      "illumination": "mean(||h(z_t)-h(z)||^2)",
+      "anchor": "mean(||h(z)-z||^2)",
+      "fixed_teacher_alignment": "mean(||h(z_t)-z||^2)"
+    },
+    "conditions": "The same four training photometric conditions, applied to held-out diagnostic normal images."
+  },
+  "comparisons": [
+    [
+      "MLP768-16",
+      "A1"
+    ]
+  ],
+  "visualization_rule": {
+    "seed": 0,
+    "conditions": [
+      "gamma_140"
+    ],
+    "selection": "Reuse all six fixed original anchor-ablation cases: recorded median-gain and worst-gain image for each of bottle/cable/carpet. Selection predates this experiment; do not select from new results.",
+    "methods": [
+      "A1",
+      "MLP768-16"
+    ],
+    "scale": "Per fixed case, vmin=0 and vmax=max of both full score maps. Both methods share the same raw-distance color range; no per-method rescaling.",
+    "interpretation": "Existing post-hoc illustrative cases only, not unbiased samples or a substitute for full paired metrics."
+  },
+  "scope": "Exactly one hidden-width/capacity exploration: original A1 MLP32 versus expanded MLP768, only bottle/cable/carpet,16-shot,3paired seeds,7conditions,common1000-step budget. Original final method/paper remain frozen; no automatic replacement or scope expansion.",
+  "restrictions": [
+    "Preserve original A0,A1,paper,checkpoints,code and all results; use independent codex/a1-expanded-mlp768 worktree and separate output directories; inspect existing work and tasks before launch.",
+    "Only change hidden width32 to768 in unchanged DefectAdapter; retain GELU,residual,output normalization and zero output weights/bias. Use initializer5000+seed; no elementwise-identical claim across different shapes.",
+    "Use Windows existing venv/RTX4060,frozen DINOv2-S/14,384 dimensions,identical pretrained weights/layer/preprocessing/cache/reference rotations/exact search/image score/map postprocessing.",
+    "Only bottle,cable,carpet and seeds0/1/2; exact original12 fitting normals,4 diagnostics,16 reference images. Complete official tests. No cross-category fitting.",
+    "Keep1000 fixed finalsteps,AdamW lr.001 wd.0001,512active normal centers,legacy1024 RNG draws,four training illumination transforms,original illumination+.1anchor loss. No synthetic-defect loss.",
+    "Reuse original centers/view order including inactive historical random draws. If chunking is required preserve effective batch512 and feature-sum/center-mean loss normalization.",
+    "No test images or real-defect labels for fitting,tuning,early stopping or checkpoint selection; diagnostics do not choose settings/checkpoints. Save all9 final heads before63 new evaluations.",
+    "Reuse63 A1 evaluations only after data/config/source/cache/weights/checkpoint/schedule/score numerical checks. Reuse is not a new independent replication.",
+    "Keep every planned result,regression,failed attempt and retry; do not change design after partial scores. Record technical fixes separately from design changes.",
+    "Form differences within category/seed/condition; equal-category and equal-condition means; report3seed mean and sampleSD,not significance. Category +/-0.1pp practical rule is descriptive.",
+    "Compare actual measured costs with identical scopes; shared1000 optimizer steps do not equal matched wall time or separately optimized best possible accuracy.",
+    "Interpret as width/capacity comparison,not parameter-isolated up-before-down ordering effect. Do not replace frozen A1,expand15classes,addloss,width ortrainingsteps.",
+    "Publish new code/config/smallresults/analysis/fixedfigures only; keep checkpoints onWindows with paths/hashes/config identity;exclude datasets,largecaches and pretrainedweights."
+  ],
+  "widths": {
+    "A1": 32,
+    "MLP768-16": 768
+  },
+  "parameter_counts": {
+    "A1": 24992,
+    "MLP768-16": 590976
+  },
+  "forward_chunk": 8192,
+  "cost_protocol": {
+    "scoring_categories": [
+      "bottle",
+      "cable",
+      "carpet"
+    ],
+    "scoring_seeds": [
+      0
+    ],
+    "scoring_condition": "clean",
+    "scoring_selection": "First eight lexicographically ordered official test images per category; identical cached input features for both arms.",
+    "scoring_images_per_category": 8,
+    "scoring_repeats": 2,
+    "method_order": "Alternate A1/MLP768-16 order across repetitions; synchronize CUDA around identical timed scopes.",
+    "scoring_scope": "Cached query adapter plus exact nearest-neighbor scoring only; exclude encoder extraction, transfers, bank construction and localization-map postprocessing. Not end-to-end inference.",
+    "training_clone_steps": 5,
+    "training_scope": "Separate timing clones with the fixed normal center schedule and same optimizer/batch normalization; never replace or choose final 1000-step checkpoints. Report actual nine-head training times separately.",
+    "peak_memory": "Reset CUDA peak statistics separately for each measured method/scope; record allocated and reserved MiB."
+  }
+}

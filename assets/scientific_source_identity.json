@@ -1,0 +1,113 @@
+{
+  "note": "These curated scientific/config/dependency and legacy-reference files are byte-identical to the preserved research workspace. Portable release orchestration and README are newly packaged, not the runners that generated archived results.",
+  "files": [
+    {
+      "path": "src/evaluation.py",
+      "sha256": "988cc0d7b66274618f971b2237569970179dd91d78bc80e665d666f4d582c292"
+    },
+    {
+      "path": "src/__init__.py",
+      "sha256": "868652db517b54239e7ab1f55f00c6ad1a5067e3610dc8aa5e8c5b892a72b272"
+    },
+    {
+      "path": "src/features.py",
+      "sha256": "0917dfb19c41c5f6ed96303127a7523576e8e1cf33081be5ad8857cb21acb4c5"
+    },
+    {
+      "path": "src/anomalydino.py",
+      "sha256": "84c04e65760d889b500d3f1c6cb675236b4d01f64e62e3c0c929b645a8bf4653"
+    },
+    {
+      "path": "src/loss_study.py",
+      "sha256": "bc7f456408cccf0f138f2a2a11df1e101b2782c280a217630ef1e89757e36e05"
+    },
+    {
+      "path": "src/banks.py",
+      "sha256": "7951b05f3b9de164e2af9856514f97006819d2903e5172e863fb1ffcb28a64bf"
+    },
+    {
+      "path": "src/defect_adapter.py",
+      "sha256": "ad3c68d64c59b07987c96231c96b65ac19d3b71a9d9e23a40b3004545bf40836"
+    },
+    {
+      "path": "src/capacity_adapter.py",
+      "sha256": "01651961295b02ccce4c8ff960ea462e559d7cab8b7996be251a25e390659b99"
+    },
+    {
+      "path": "configs/mvtec_extension.json",
+      "sha256": "a3aaa1986b6329b26629b6cffdaea9c59ca0c33879eeabec3abec4ae574dae87"
+    },
+    {
+      "path": "configs/a1_expanded_mlp768.json",
+      "sha256": "7c9398cc28f55eb84e7910b3c0b388718dd249478069949f3ec3bd239da05fed"
+    },
+    {
+      "path": "configs/adapter_full_comparison.json",
+      "sha256": "b19d913133e7f7d6fe597b25568ea8a511a6283b52a3680d51e5626a2df150e5"
+    },
+    {
+      "path": "configs/anchor_ablation.json",
+      "sha256": "c9256185943b0777b91af088250eb19eacbf566de59dc3a420961816a01d3623"
+    },
+    {
+      "path": "configs/a1_capacity_data_cnn.json",
+      "sha256": "591aa5ca37683935c444aebaaaa07635fd1b0299171775468db08451e2526295"
+    },
+    {
+      "path": "configs/a1_loss_study.json",
+      "sha256": "5e6eed9e590b5626d4f1411259b0f040b8c04480e1072c6f650023a5f2d322fb"
+    },
+    {
+      "path": "configs/defect_adapter_pilot.json",
+      "sha256": "c65a18f66cbdfa3ef592d17012eff805f67b4fea9f9db84e8382b03b9090a8bd"
+    },
+    {
+      "path": "configs/a1_expanded_mlp768_full.json",
+      "sha256": "46b911157cf4dd13b39d20841b67554aec4711d263f62850f0848e08c89f62e2"
+    },
+    {
+      "path": "requirements/torch-cu126.txt",
+      "sha256": "d37f2f9ce7f160ee7614db8f0be4c450d3a904c15ab6286e22e14ced6f8bced6"
+    },
+    {
+      "path": "requirements/windows-e2.lock.txt",
+      "sha256": "0443aed764e5db1585516616fbaa67f96ece013a3b951c1f1b600213964a3c26"
+    },
+    {
+      "path": "requirements/windows-core.lock.txt",
+      "sha256": "d43a12d2abf92dc45bb0ad46d72d9a9a599cd614169ee65988c41e9ccc9d585c"
+    },
+    {
+      "path": "tests/test_defect_adapter.py",
+      "sha256": "9b48eb03dbfc09c5a8c47556a5320a48cca5191240f05cb85b094ed447a013f9"
+    },
+    {
+      "path": "tests/test_capacity_adapter.py",
+      "sha256": "0f60a0880a3aa20f00c7b1722de600677e38f71600dc522f7a8505c30d503294"
+    },
+    {
+      "path": "tests/test_loss_study.py",
+      "sha256": "d55a1c8e884d90531587cd3125ec92107d53c8f5e3e1dc16991b32f56c68d696"
+    },
+    {
+      "path": "tests/test_expanded_mlp768.py",
+      "sha256": "ca27504403d668afedd12213fd7bfc2cca443d5efd07a725a6ead1437152fae7"
+    },
+    {
+      "path": "scripts/run_defect_adapter.py",
+      "sha256": "c849893f5e77d5990ba3f15b3581b6d18c0a5f9310b8d00f9354245f20a5b0eb"
+    },
+    {
+      "path": "scripts/analyze_mvtec_extension.py",
+      "sha256": "32e01847413084a7f2edf80fe9b985c21e34bd2af70bacce8b12757929a66c5f"
+    },
+    {
+      "path": "scripts/prepare_capacity_study.py",
+      "sha256": "1df3a72a0e90f1e60065fd145dbf6cfd577f75b8cbfcdd316026ef836a4f95a9"
+    },
+    {
+      "path": "scripts/analyze_defect_adapter.py",
+      "sha256": "90ecbe7a930ec9304fcdf191984a40b78c74d742d62d6a44b494b58ea146bf17"
+    }
+  ]
+}

@@ -1,0 +1,584 @@
+{
+  "paired_cells": 630,
+  "formula": "(MLPw-32 - A0-32) - (MLPw-16 - A0-16), w in {32,64}",
+  "meaning": "Change in the adapter advantage over its same-budget A0 control when the normal-image budget doubles.",
+  "limit": "This is a descriptive difference of paired observed gains, not an isolated causal effect of more adapter-fitting data: the reference bank also changes and can interact with the adapter. Three seeds share the same test set; no significance test is performed.",
+  "aggregation": "Differences first within category/seed/condition, then equal-category and equal-condition macro means within each seed, then mean and sample SD across three paired seeds.",
+  "units": "percentage_points",
+  "groups": {
+    "all15": {
+      "categories": [
+        "bottle",
+        "cable",
+        "capsule",
+        "carpet",
+        "grid",
+        "hazelnut",
+        "leather",
+        "metal_nut",
+        "pill",
+        "screw",
+        "tile",
+        "toothbrush",
+        "transistor",
+        "wood",
+        "zipper"
+      ],
+      "widths": {
+        "32": {
+          "shift_pixel_ap": {
+            "mean": -0.0065565629676665295,
+            "sd": 0.2092830854807266,
+            "values": [
+              -0.2145716131620369,
+              0.2039719179917728,
+              -0.009069993732735487
+            ]
+          },
+          "shift_image_auroc": {
+            "mean": 0.030025261464210393,
+            "sd": 0.03883287264694213,
+            "values": [
+              0.06691469247581942,
+              0.03365699059388624,
+              -0.010495898677074482
+            ]
+          },
+          "clean_pixel_ap": {
+            "mean": -0.05486449486249939,
+            "sd": 0.18025814697888337,
+            "values": [
+              -0.23504811236228568,
+              0.12546808926515052,
+              -0.055013461490363014
+            ]
+          },
+          "clean_image_auroc": {
+            "mean": -0.010139018207812414,
+            "sd": 0.0519379165827737,
+            "values": [
+              0.04517818013494231,
+              -0.017733897519941106,
+              -0.05786133723843845
+            ]
+          },
+          "all7_pixel_ap": {
+            "mean": -0.013457696095499795,
+            "sd": 0.205135609540194,
+            "values": [
+              -0.217496827333501,
+              0.19275708531654104,
+              -0.015633346269539418
+            ]
+          },
+          "all7_image_auroc": {
+            "mean": 0.024287507225349992,
+            "sd": 0.040573960198551515,
+            "values": [
+              0.06380947642712269,
+              0.02631543514905376,
+              -0.017262389900126476
+            ]
+          },
+          "shift_pixel_ap_category_mean_change_pp": {
+            "bottle": 0.08364587439552583,
+            "cable": 0.26746912395725597,
+            "capsule": 0.20667279220831286,
+            "carpet": -0.4800894654449846,
+            "grid": 0.36388806234771603,
+            "hazelnut": 0.15969584472788315,
+            "leather": -0.9389828070215079,
+            "metal_nut": 0.0250636886929883,
+            "pill": 0.2423431202942497,
+            "screw": 0.15790357385792259,
+            "tile": -1.0089595080911975,
+            "toothbrush": 0.05795850427569952,
+            "transistor": 0.16967886079714864,
+            "wood": -0.2583836040339318,
+            "zipper": 0.8537474945219213
+          },
+          "category_directions": {
+            "improved": [
+              "cable",
+              "capsule",
+              "grid",
+              "hazelnut",
+              "pill",
+              "screw",
+              "transistor",
+              "zipper"
+            ],
+            "tied": [
+              "bottle",
+              "metal_nut",
+              "toothbrush"
+            ],
+            "degraded": [
+              "carpet",
+              "leather",
+              "tile",
+              "wood"
+            ]
+          },
+          "category_tie_rule": "Inclusive ±0.1 pp, applied to the mean paired change across seeds and shifts."
+        },
+        "64": {
+          "shift_pixel_ap": {
+            "mean": 0.09669217163076017,
+            "sd": 0.25704137292418067,
+            "values": [
+              -0.18126612935467487,
+              0.3258081879427163,
+              0.14553445630423908
+            ]
+          },
+          "shift_image_auroc": {
+            "mean": 0.036302690375874115,
+            "sd": 0.03664484209731266,
+            "values": [
+              0.07729999304787104,
+              0.024873787247653184,
+              0.006734290832098126
+            ]
+          },
+          "clean_pixel_ap": {
+            "mean": 0.04678867670246043,
+            "sd": 0.2299895973453,
+            "values": [
+              -0.2073603636082048,
+              0.240582113732463,
+              0.1071442799831231
+            ]
+          },
+          "clean_image_auroc": {
+            "mean": -0.011982719089283438,
+            "sd": 0.0540401877167869,
+            "values": [
+              0.05041749076295806,
+              -0.04323021876967722,
+              -0.043135429261131154
+            ]
+          },
+          "all7_pixel_ap": {
+            "mean": 0.08956310092671736,
+            "sd": 0.2531183625995867,
+            "values": [
+              -0.18499387710517912,
+              0.3136330344841087,
+              0.14005014540122251
+            ]
+          },
+          "all7_image_auroc": {
+            "mean": 0.02940477473799447,
+            "sd": 0.038935254074309714,
+            "values": [
+              0.07345963557859776,
+              0.0151446435308917,
+              -0.00038995489550605736
+            ]
+          },
+          "shift_pixel_ap_category_mean_change_pp": {
+            "bottle": 0.053227277900544684,
+            "cable": 0.421000597039747,
+            "capsule": 0.4081663618223202,
+            "carpet": -0.36913701573545576,
+            "grid": 0.32063985647737114,
+            "hazelnut": 0.07906398044680173,
+            "leather": -0.7271918441373652,
+            "metal_nut": 0.11990535725336865,
+            "pill": 0.27205071239511225,
+            "screw": 0.06029094326094516,
+            "tile": -0.4215555392071129,
+            "toothbrush": 0.06917884660492812,
+            "transistor": 0.19833214618785178,
+            "wood": 0.17990236127038367,
+            "zipper": 0.786508532881962
+          },
+          "category_directions": {
+            "improved": [
+              "cable",
+              "capsule",
+              "grid",
+              "metal_nut",
+              "pill",
+              "transistor",
+              "wood",
+              "zipper"
+            ],
+            "tied": [
+              "bottle",
+              "hazelnut",
+              "screw",
+              "toothbrush"
+            ],
+            "degraded": [
+              "carpet",
+              "leather",
+              "tile"
+            ]
+          },
+          "category_tie_rule": "Inclusive ±0.1 pp, applied to the mean paired change across seeds and shifts."
+        }
+      }
+    },
+    "original3_development": {
+      "categories": [
+        "bottle",
+        "cable",
+        "carpet"
+      ],
+      "widths": {
+        "32": {
+          "shift_pixel_ap": {
+            "mean": -0.04299148903073426,
+            "sd": 0.2897384643760444,
+            "values": [
+              -0.32725661514648113,
+              0.25192648332654594,
+              -0.05364433527226758
+            ]
+          },
+          "shift_image_auroc": {
+            "mean": -0.10515575545560525,
+            "sd": 0.07740275276443558,
+            "values": [
+              -0.17074795935365403,
+              -0.12493753123438515,
+              -0.0197817757787766
+            ]
+          },
+          "clean_pixel_ap": {
+            "mean": -0.05434142393385072,
+            "sd": 0.2826582019192322,
+            "values": [
+              -0.3308995062192288,
+              0.23404550992001116,
+              -0.0661702755023345
+            ]
+          },
+          "clean_image_auroc": {
+            "mean": -0.13951357654505836,
+            "sd": 0.08527234395070665,
+            "values": [
+              -0.2373813093453266,
+              -0.08120939530234332,
+              -0.09995002498750516
+            ]
+          },
+          "all7_pixel_ap": {
+            "mean": -0.044612908302608036,
+            "sd": 0.28872666160270166,
+            "values": [
+              -0.32777702815687365,
+              0.24937205855418382,
+              -0.05543375530513428
+            ]
+          },
+          "all7_image_auroc": {
+            "mean": -0.11006401561124142,
+            "sd": 0.07488988663206249,
+            "values": [
+              -0.1802670093524644,
+              -0.1186906546726649,
+              -0.031234382808594967
+            ]
+          },
+          "shift_pixel_ap_category_mean_change_pp": {
+            "bottle": 0.08364587439552583,
+            "cable": 0.26746912395725597,
+            "carpet": -0.4800894654449846
+          },
+          "category_directions": {
+            "improved": [
+              "cable"
+            ],
+            "tied": [
+              "bottle"
+            ],
+            "degraded": [
+              "carpet"
+            ]
+          },
+          "category_tie_rule": "Inclusive ±0.1 pp, applied to the mean paired change across seeds and shifts."
+        },
+        "64": {
+          "shift_pixel_ap": {
+            "mean": 0.03503028640161198,
+            "sd": 0.15716852208688167,
+            "values": [
+              -0.10887276508805832,
+              0.20274651422370307,
+              0.011217110069191202
+            ]
+          },
+          "shift_image_auroc": {
+            "mean": -0.08745627186406764,
+            "sd": 0.11688227122895742,
+            "values": [
+              -0.17699483591537526,
+              -0.130143261702483,
+              0.04476928202565535
+            ]
+          },
+          "clean_pixel_ap": {
+            "mean": 0.019478353880530982,
+            "sd": 0.14044138062270833,
+            "values": [
+              -0.10253833821598501,
+              0.17299468082006367,
+              -0.012021280962485706
+            ]
+          },
+          "clean_image_auroc": {
+            "mean": -0.1082791937364627,
+            "sd": 0.11792099895692028,
+            "values": [
+              -0.2373813093453266,
+              -0.08120939530234332,
+              -0.006246876561718147
+            ]
+          },
+          "all7_pixel_ap": {
+            "mean": 0.03280858175574326,
+            "sd": 0.1547432987660158,
+            "values": [
+              -0.10796784696347642,
+              0.19849625230889742,
+              0.007897339921808787
+            ]
+          },
+          "all7_image_auroc": {
+            "mean": -0.0904309749886955,
+            "sd": 0.11509448919678975,
+            "values": [
+              -0.18562147497679687,
+              -0.12315270935960589,
+              0.03748125937031628
+            ]
+          },
+          "shift_pixel_ap_category_mean_change_pp": {
+            "bottle": 0.053227277900544684,
+            "cable": 0.421000597039747,
+            "carpet": -0.36913701573545576
+          },
+          "category_directions": {
+            "improved": [
+              "cable"
+            ],
+            "tied": [
+              "bottle"
+            ],
+            "degraded": [
+              "carpet"
+            ]
+          },
+          "category_tie_rule": "Inclusive ±0.1 pp, applied to the mean paired change across seeds and shifts."
+        }
+      }
+    },
+    "prior12_extension": {
+      "categories": [
+        "capsule",
+        "grid",
+        "hazelnut",
+        "leather",
+        "metal_nut",
+        "pill",
+        "screw",
+        "tile",
+        "toothbrush",
+        "transistor",
+        "wood",
+        "zipper"
+      ],
+      "widths": {
+        "32": {
+          "shift_pixel_ap": {
+            "mean": 0.0025521685481004162,
+            "sd": 0.18919227363691085,
+            "values": [
+              -0.18640036266592583,
+              0.19198327665807954,
+              0.0020735916521475335
+            ]
+          },
+          "shift_image_auroc": {
+            "mean": 0.0638205156941643,
+            "sd": 0.06775219334891294,
+            "values": [
+              0.1263303554331878,
+              0.07330562105095408,
+              -0.00817442940164895
+            ]
+          },
+          "clean_pixel_ap": {
+            "mean": -0.054995262594661566,
+            "sd": 0.1547231102992103,
+            "values": [
+              -0.2110852638980499,
+              0.09832373410143536,
+              -0.05222425798737015
+            ]
+          },
+          "clean_image_auroc": {
+            "mean": 0.022204621376499072,
+            "sd": 0.08419964529946547,
+            "values": [
+              0.11581805250500954,
+              -0.001865023074340555,
+              -0.04733916530117177
+            ]
+          },
+          "all7_pixel_ap": {
+            "mean": -0.0056688930437227255,
+            "sd": 0.1842650599865259,
+            "values": [
+              -0.18992677712765785,
+              0.17860334200713038,
+              -0.005683244010640707
+            ]
+          },
+          "all7_image_auroc": {
+            "mean": 0.05787538793449784,
+            "sd": 0.06941800051828939,
+            "values": [
+              0.12482859787201947,
+              0.06256695760448341,
+              -0.013769391673009354
+            ]
+          },
+          "shift_pixel_ap_category_mean_change_pp": {
+            "capsule": 0.20667279220831286,
+            "grid": 0.36388806234771603,
+            "hazelnut": 0.15969584472788315,
+            "leather": -0.9389828070215079,
+            "metal_nut": 0.0250636886929883,
+            "pill": 0.2423431202942497,
+            "screw": 0.15790357385792259,
+            "tile": -1.0089595080911975,
+            "toothbrush": 0.05795850427569952,
+            "transistor": 0.16967886079714864,
+            "wood": -0.2583836040339318,
+            "zipper": 0.8537474945219213
+          },
+          "category_directions": {
+            "improved": [
+              "capsule",
+              "grid",
+              "hazelnut",
+              "pill",
+              "screw",
+              "transistor",
+              "zipper"
+            ],
+            "tied": [
+              "metal_nut",
+              "toothbrush"
+            ],
+            "degraded": [
+              "leather",
+              "tile",
+              "wood"
+            ]
+          },
+          "category_tie_rule": "Inclusive ±0.1 pp, applied to the mean paired change across seeds and shifts."
+        },
+        "64": {
+          "shift_pixel_ap": {
+            "mean": 0.11210764293804724,
+            "sd": 0.28396153683751063,
+            "values": [
+              -0.199364470421329,
+              0.3565736063724696,
+              0.17911379286300108
+            ]
+          },
+          "shift_image_auroc": {
+            "mean": 0.06724243093585955,
+            "sd": 0.07189225330757579,
+            "values": [
+              0.1408737002886826,
+              0.06362804948518723,
+              -0.002774456966291184
+            ]
+          },
+          "clean_pixel_ap": {
+            "mean": 0.05361625740794281,
+            "sd": 0.2559059448444477,
+            "values": [
+              -0.23356586995625975,
+              0.25747897196056285,
+              0.13693567021952532
+            ]
+          },
+          "clean_image_auroc": {
+            "mean": 0.012091399572511374,
+            "sd": 0.0959544613194102,
+            "values": [
+              0.12236719079002922,
+              -0.03373542463651069,
+              -0.05235756743598441
+            ]
+          },
+          "all7_pixel_ap": {
+            "mean": 0.10375173071946091,
+            "sd": 0.27985182682262083,
+            "values": [
+              -0.2042503846406048,
+              0.3424172300279115,
+              0.17308834677107596
+            ]
+          },
+          "all7_image_auroc": {
+            "mean": 0.05936371216966695,
+            "sd": 0.07451345680115241,
+            "values": [
+              0.1382299132174464,
+              0.0497189817535161,
+              -0.009857758461961645
+            ]
+          },
+          "shift_pixel_ap_category_mean_change_pp": {
+            "capsule": 0.4081663618223202,
+            "grid": 0.32063985647737114,
+            "hazelnut": 0.07906398044680173,
+            "leather": -0.7271918441373652,
+            "metal_nut": 0.11990535725336865,
+            "pill": 0.27205071239511225,
+            "screw": 0.06029094326094516,
+            "tile": -0.4215555392071129,
+            "toothbrush": 0.06917884660492812,
+            "transistor": 0.19833214618785178,
+            "wood": 0.17990236127038367,
+            "zipper": 0.786508532881962
+          },
+          "category_directions": {
+            "improved": [
+              "capsule",
+              "grid",
+              "metal_nut",
+              "pill",
+              "transistor",
+              "wood",
+              "zipper"
+            ],
+            "tied": [
+              "hazelnut",
+              "screw",
+              "toothbrush"
+            ],
+            "degraded": [
+              "leather",
+              "tile"
+            ]
+          },
+          "category_tie_rule": "Inclusive ±0.1 pp, applied to the mean paired change across seeds and shifts."
+        }
+      }
+    }
+  },
+  "inputs_sha256": {
+    "config.json": "591aa5ca37683935c444aebaaaa07635fd1b0299171775468db08451e2526295",
+    "metrics.csv": "6ea5689b29278b43fceb3aadf0c485568fc576a488b7d82807f629e45373d34a"
+  }
+}

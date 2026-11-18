@@ -1,0 +1,168 @@
+{
+  "status": "passed",
+  "utc": "2026-11-11T04:41:21.326808+00:00",
+  "evaluations": 2520,
+  "new_evaluations": 1890,
+  "reused_evaluations": 630,
+  "new_heads": 225,
+  "max_errors": {
+    "pixel_ap": 0.0,
+    "image_auroc": 0.0,
+    "image_score": 0.0
+  },
+  "independent_sklearn": [
+    {
+      "category": "bottle",
+      "arm": "A0-32",
+      "sklearn_error": 0.0
+    },
+    {
+      "category": "bottle",
+      "arm": "CNN3-32",
+      "sklearn_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "cable",
+      "arm": "A0-32",
+      "sklearn_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "cable",
+      "arm": "CNN3-32",
+      "sklearn_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "capsule",
+      "arm": "A0-32",
+      "sklearn_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "capsule",
+      "arm": "CNN3-32",
+      "sklearn_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "carpet",
+      "arm": "A0-32",
+      "sklearn_error": 0.0
+    },
+    {
+      "category": "carpet",
+      "arm": "CNN3-32",
+      "sklearn_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "grid",
+      "arm": "A0-32",
+      "sklearn_error": 5.551115123125783e-17
+    },
+    {
+      "category": "grid",
+      "arm": "CNN3-32",
+      "sklearn_error": 5.551115123125783e-17
+    },
+    {
+      "category": "hazelnut",
+      "arm": "A0-32",
+      "sklearn_error": 2.220446049250313e-16
+    },
+    {
+      "category": "hazelnut",
+      "arm": "CNN3-32",
+      "sklearn_error": 0.0
+    },
+    {
+      "category": "leather",
+      "arm": "A0-32",
+      "sklearn_error": 0.0
+    },
+    {
+      "category": "leather",
+      "arm": "CNN3-32",
+      "sklearn_error": 0.0
+    },
+    {
+      "category": "metal_nut",
+      "arm": "A0-32",
+      "sklearn_error": 0.0
+    },
+    {
+      "category": "metal_nut",
+      "arm": "CNN3-32",
+      "sklearn_error": 2.220446049250313e-16
+    },
+    {
+      "category": "pill",
+      "arm": "A0-32",
+      "sklearn_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "pill",
+      "arm": "CNN3-32",
+      "sklearn_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "screw",
+      "arm": "A0-32",
+      "sklearn_error": 5.551115123125783e-17
+    },
+    {
+      "category": "screw",
+      "arm": "CNN3-32",
+      "sklearn_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "tile",
+      "arm": "A0-32",
+      "sklearn_error": 0.0
+    },
+    {
+      "category": "tile",
+      "arm": "CNN3-32",
+      "sklearn_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "toothbrush",
+      "arm": "A0-32",
+      "sklearn_error": 2.220446049250313e-16
+    },
+    {
+      "category": "toothbrush",
+      "arm": "CNN3-32",
+      "sklearn_error": 0.0
+    },
+    {
+      "category": "transistor",
+      "arm": "A0-32",
+      "sklearn_error": 5.551115123125783e-17
+    },
+    {
+      "category": "transistor",
+      "arm": "CNN3-32",
+      "sklearn_error": 0.0
+    },
+    {
+      "category": "wood",
+      "arm": "A0-32",
+      "sklearn_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "wood",
+      "arm": "CNN3-32",
+      "sklearn_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "zipper",
+      "arm": "A0-32",
+      "sklearn_error": 0.0
+    },
+    {
+      "category": "zipper",
+      "arm": "CNN3-32",
+      "sklearn_error": 0.0
+    }
+  ],
+  "all_new_heads_finished_before_evaluation": true,
+  "old_files_unchanged": true,
+  "audit_elapsed_s": 9394.20233739994
+}

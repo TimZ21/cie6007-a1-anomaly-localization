@@ -1,0 +1,4 @@
+arm,parameters,timing_origin,categories,heads,evaluations,training_s_total,training_s_per_head_mean,scoring_s_macro_ms_per_image,adapter_s_macro_ms_per_image,mapping_s_macro_ms_per_image,training_peak_cuda_allocated_mib,evaluation_peak_cuda_allocated_mib,training_peak_cuda_reserved_mib,evaluation_peak_cuda_reserved_mib
+A1,24992,historical_A1_all15,15,45,315,1802.7762094999634,40.061693544443635,39.53281305817103,1.628531507846876,28.62817994580132,,,,
+MLP768-16,590976,historical_MLP768_original3,3,9,63,172.8959681999404,19.21066313332671,39.39432740386119,1.3576830248702478,31.424301139441237,209.69921875,1127.4091796875,256.0,1352.0
+MLP768-16,590976,current_MLP768_remaining12,12,36,252,678.2302150999312,18.83972819722031,39.44042534716676,1.331075630876931,30.339370588434956,209.69921875,1192.2939453125,256.0,1390.0

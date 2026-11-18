@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "utc": "2026-11-15T17:07:25.914891+00:00",
+  "evaluations": 126,
+  "new_evaluations": 63,
+  "reused_evaluations": 63,
+  "new_heads": 9,
+  "max_errors": {
+    "pixel_ap": 0.0,
+    "image_auroc": 0.0,
+    "image_score": 0.0
+  },
+  "independent_sklearn": [
+    {
+      "category": "bottle",
+      "arm": "MLP768-16",
+      "sklearn_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "cable",
+      "arm": "MLP768-16",
+      "sklearn_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "carpet",
+      "arm": "MLP768-16",
+      "sklearn_error": 0.0
+    }
+  ],
+  "all_new_heads_finished_before_evaluation": true,
+  "old_files_unchanged": true,
+  "audit_elapsed_s": 565.7897831000155
+}

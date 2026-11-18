@@ -1,0 +1,59 @@
+{
+  "categories": ["cable"],
+  "seeds": [0, 1, 2],
+  "shots": [16],
+  "methods": ["A0", "A1", "A2", "A3"],
+  "primary_method": "A3",
+  "conditions": [
+    {"name": "clean", "kind": "clean", "factor": 1.0},
+    {"name": "brightness_070", "kind": "brightness", "factor": 0.7},
+    {"name": "gamma_140", "kind": "gamma", "factor": 1.4}
+  ],
+  "training_conditions": [
+    {"name": "brightness_085", "kind": "brightness", "factor": 0.85},
+    {"name": "brightness_115", "kind": "brightness", "factor": 1.15},
+    {"name": "contrast_085", "kind": "contrast", "factor": 0.85},
+    {"name": "contrast_115", "kind": "contrast", "factor": 1.15}
+  ],
+  "training": {
+    "fit_images": 12,
+    "diagnostic_images": 4,
+    "bottleneck": 32,
+    "steps": 1000,
+    "batch_size": 1024,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "anchor_weight": 0.1,
+    "defect_weight": 1.0,
+    "initialization_seed_offset": 5000,
+    "batch_seed_offset": 2000,
+    "split_seed_offset": 1000,
+    "checkpoint_rule": "Final fixed step only; no early stopping, tuning or refit from diagnostics/test results."
+  },
+  "backbone": "dinov2_vits14",
+  "input_size": 448,
+  "rotations": [0, 45, 90, 135, 180, 225, 270, 315],
+  "bank_vectors": 131072,
+  "search_chunk": 128,
+  "weights_sha256": "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9",
+  "base_commit": "e8b0c28e485ee4c815599a8d473190f1b79b8517",
+  "parent_commit": "d6a0b2d034fd7e2f2eaf70851bd45e22c97d471d",
+  "primary_metric": "Cable pixel AP, equal mean over brightness_070 and gamma_140 within each paired seed",
+  "scope": "Exploratory small pilot on a previously inspected category, not confirmation or SOTA.",
+  "continuation_target": {
+    "shift_pixel_ap_min_pp": 1.0,
+    "clean_pixel_ap_min_pp": -0.5,
+    "clean_image_auroc_min_pp": -0.2,
+    "min_positive_seeds": 2
+  },
+  "restrictions": [
+    "Complete all 36 evaluations with no outcome-driven tuning, checkpoint selection or expansion.",
+    "All four detectors use the exact same 16 references and eight rotations. A1-A3 fit only 12 of them; the other four provide synthetic diagnostics, never selection.",
+    "A1-A3 share initialization, synthetic quadruplets, minibatch indices, optimizer, steps and all scoring settings; only the specified loss differs.",
+    "A0 is the unchanged original detector; its zero training cost differs from the adapters and is reported.",
+    "Fitting is completed for all seeds before any test images or labels are loaded by this run.",
+    "The unchanged normal reference bank is transformed by the same adapter as queries; no synthetic defects or augmented lighting views are added to the deployed bank.",
+    "The primary A3 must also improve over A2 to support the cross-light mechanism; a better A1 or A2 cannot be relabeled as the proposed success.",
+    "No original source/config/results are overwritten. Main and the preceding experiment branch are preserved."
+  ]
+}

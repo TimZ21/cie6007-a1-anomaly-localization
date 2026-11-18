@@ -1,0 +1,306 @@
+{
+  "backbone": "dinov2_vits14",
+  "input_size": 448,
+  "rotations": [
+    0,
+    45,
+    90,
+    135,
+    180,
+    225,
+    270,
+    315
+  ],
+  "search_chunk": 128,
+  "weights_sha256": "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9",
+  "conditions": [
+    {
+      "name": "clean",
+      "kind": "clean",
+      "factor": 1.0
+    },
+    {
+      "name": "brightness_070",
+      "kind": "brightness",
+      "factor": 0.7
+    },
+    {
+      "name": "brightness_130",
+      "kind": "brightness",
+      "factor": 1.3
+    },
+    {
+      "name": "contrast_070",
+      "kind": "contrast",
+      "factor": 0.7
+    },
+    {
+      "name": "contrast_130",
+      "kind": "contrast",
+      "factor": 1.3
+    },
+    {
+      "name": "gamma_070",
+      "kind": "gamma",
+      "factor": 0.7
+    },
+    {
+      "name": "gamma_140",
+      "kind": "gamma",
+      "factor": 1.4
+    }
+  ],
+  "training_conditions": [
+    {
+      "name": "brightness_085",
+      "kind": "brightness",
+      "factor": 0.85
+    },
+    {
+      "name": "brightness_115",
+      "kind": "brightness",
+      "factor": 1.15
+    },
+    {
+      "name": "contrast_085",
+      "kind": "contrast",
+      "factor": 0.85
+    },
+    {
+      "name": "contrast_115",
+      "kind": "contrast",
+      "factor": 1.15
+    }
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "categories": [
+    "bottle",
+    "cable",
+    "capsule",
+    "carpet",
+    "grid",
+    "hazelnut",
+    "leather",
+    "metal_nut",
+    "pill",
+    "screw",
+    "tile",
+    "toothbrush",
+    "transistor",
+    "wood",
+    "zipper"
+  ],
+  "development_categories": [
+    "bottle",
+    "cable",
+    "carpet"
+  ],
+  "extension_categories": [
+    "capsule",
+    "grid",
+    "hazelnut",
+    "leather",
+    "metal_nut",
+    "pill",
+    "screw",
+    "tile",
+    "toothbrush",
+    "transistor",
+    "wood",
+    "zipper"
+  ],
+  "shots": [
+    16,
+    32
+  ],
+  "arms": [
+    "A0-16",
+    "A0-32",
+    "MLP32-16",
+    "MLP64-16",
+    "MLP32-32",
+    "MLP64-32",
+    "CNN1-32",
+    "CNN3-32"
+  ],
+  "new_arms": [
+    "A0-32",
+    "MLP64-16",
+    "MLP32-32",
+    "MLP64-32",
+    "CNN1-32",
+    "CNN3-32"
+  ],
+  "reused_arms": [
+    "A0-16",
+    "MLP32-16"
+  ],
+  "trainable_new_arms": [
+    "MLP64-16",
+    "MLP32-32",
+    "MLP64-32",
+    "CNN1-32",
+    "CNN3-32"
+  ],
+  "reference_runs": {
+    "development": "results/metrics/adapter_full_20261102",
+    "extension": "results/metrics/mvtec_extension_20261103"
+  },
+  "inventory": "assets/mvtec_extension_files.json",
+  "data_validation": "assets/mvtec_extension_validation.json",
+  "data_root": "data/mvtec_ad",
+  "training": {
+    "steps": 1000,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "anchor_weight": 0.1,
+    "initialization_seed_offset": 5000,
+    "batch_seed_offset": 2000,
+    "split_seed_offset": 1000,
+    "checkpoint_rule": "Final fixed step only; no early stopping, tuning or refit from diagnostics/test results.",
+    "effective_center_patches": 512,
+    "effective_centers": 512,
+    "legacy_batch_size": 1024,
+    "batch_size": 1024,
+    "chunk_centers": 512,
+    "optimizer": "AdamW",
+    "foreach": false,
+    "loss": "illumination + 0.1 * anchor",
+    "synthetic_defect_loss": false
+  },
+  "architecture": {
+    "dimension": 384,
+    "mlp_hidden": [
+      32,
+      64
+    ],
+    "cnn_hidden": 64,
+    "cnn_blocks": [
+      1,
+      3
+    ],
+    "cnn_kernel_size": 3,
+    "cnn_stride": 1,
+    "cnn_padding": 1,
+    "activation": "GELU",
+    "output": "L2-normalized residual",
+    "spatial_conv_initialization": "zero weight and bias",
+    "output_initialization": "zero weight and bias",
+    "shared_initialization": "CNN input/output projections copy the exact seeded MLP64 linear weights, reshaped to 1x1 kernels"
+  },
+  "split_rule": "Preserve old16 reference order and old12fit/4diagnostic. PCG64(seed+3000) permutation of lexicographically sorted unused normal training paths; first12 extra fit, last4 extra diagnostic; append all16 to reference bank.",
+  "fit_images_by_shots": {
+    "16": 12,
+    "32": 24
+  },
+  "diagnostic_images_by_shots": {
+    "16": 4,
+    "32": 8
+  },
+  "expected_evaluations": 2520,
+  "expected_reused_evaluations": 630,
+  "expected_new_evaluations": 1890,
+  "expected_new_heads": 225,
+  "primary_metric": "Equal-category then equal-six-shift macro pixel AP within each paired seed. Differences are formed at category/seed/condition before aggregation.",
+  "category_change_rule": {
+    "metric": "six-shift macro pixel AP difference, averaged over paired seeds",
+    "threshold_percentage_points": 0.1,
+    "improved": "delta > +0.1 pp",
+    "tied": "-0.1 pp <= delta <= +0.1 pp",
+    "degraded": "delta < -0.1 pp",
+    "interpretation": "Predeclared practical reporting threshold; not a significance test."
+  },
+  "comparisons": [
+    [
+      "MLP64-16",
+      "MLP32-16"
+    ],
+    [
+      "MLP32-32",
+      "MLP32-16"
+    ],
+    [
+      "MLP64-32",
+      "MLP64-16"
+    ],
+    [
+      "MLP64-32",
+      "MLP32-32"
+    ],
+    [
+      "MLP32-16",
+      "A0-16"
+    ],
+    [
+      "MLP64-16",
+      "A0-16"
+    ],
+    [
+      "MLP32-32",
+      "A0-32"
+    ],
+    [
+      "MLP64-32",
+      "A0-32"
+    ],
+    [
+      "CNN1-32",
+      "A0-32"
+    ],
+    [
+      "CNN3-32",
+      "A0-32"
+    ],
+    [
+      "CNN1-32",
+      "MLP64-32"
+    ],
+    [
+      "CNN3-32",
+      "CNN1-32"
+    ],
+    [
+      "A0-32",
+      "A0-16"
+    ]
+  ],
+  "interaction": "(MLP64-32 - MLP32-32) - (MLP64-16 - MLP32-16)",
+  "visualization_rule": {
+    "seed": 0,
+    "conditions": [
+      "clean",
+      "gamma_140"
+    ],
+    "case_selection": "Lexicographically first defective test path in each of all15 categories, fixed before new scoring; no selection by model performance.",
+    "methods": [
+      "A0-16",
+      "A0-32",
+      "MLP32-16",
+      "MLP64-16",
+      "MLP32-32",
+      "MLP64-32",
+      "CNN1-32",
+      "CNN3-32"
+    ],
+    "map_color_scale": "One shared scale across methods for each image and condition; display native image and ground truth.",
+    "scale": "Per case and condition, common zero to pooled-all-eight-method 99th percentile; no per-method rescaling."
+  },
+  "frozen_base_commit": "92f6dda611df246424641d9076bd0bcf443102fb",
+  "scope": "Stages1/2 capacity,16/32 normal data andCNN1/3 only. DINOv2-S/14 frozen. Stage3 loss experiments are not implemented.",
+  "restrictions": [
+    "All15 categories and full official test sets; every category/seed fit independently; no cross-category mixture.",
+    "Train all225 new final-step heads before new test evaluation. No test-driven model changes, removal, stopping or checkpoint choice.",
+    "Same effective512 centers per step, identical normal/light views and center schedules within budget across methods; 1000 steps AdamW fixed.",
+    "Loss is illumination +0.1anchor only. No synthetic defect loss. Legacy inactive draws preserve RNG but enter neither forward nor loss.",
+    "Use actual featuregrid sizes. CNN neighborhoods come from the same image and view; per-layer masking matches full-image zero padding.",
+    "Each normal rotation passes through the adapter separately before flattening; reference counts/dimensions and exactNN/scoring/postprocessing unchanged.",
+    "Preserve old source,paper,results. Record failed attempts and retries separately. No datasets,large caches or pretrainedweights in Git.",
+    "Report allarms,allcategories,paired seeds and conditions. Original3 and earlier12 are both previously evaluated,not new unseenvalidation.",
+    "Categorymacro and conditionmacro are equalweighted. Seeds share the same testset and are not independent datasets; positive mean is not significance.",
+    "CNN depth also changes parametercount; do not interpret as parameter-controlled puredepth. 32shot expands both fitset and normal bank; compare samebudget A0."
+  ]
+}

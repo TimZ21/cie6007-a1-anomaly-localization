@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "utc": "2026-11-02T07:28:31.896934+00:00",
+  "evaluations": 36,
+  "image_rows": 5400,
+  "max_errors": {
+    "independent_auroc": 1.1102230246251565e-16,
+    "reconstructed_pixel_ap": 0.0,
+    "patch_to_image": 0.0,
+    "adapter_bank": 0.0,
+    "faiss_sample_patch_distance": 8.419156074523926e-07,
+    "zero_adapter_feature": 2.9802322387695312e-08
+  },
+  "independent_sklearn_clean_seed0": [
+    {
+      "method": "A0",
+      "absolute_error": 1.1102230246251565e-16
+    },
+    {
+      "method": "A1",
+      "absolute_error": 2.220446049250313e-16
+    },
+    {
+      "method": "A2",
+      "absolute_error": 1.1102230246251565e-16
+    },
+    {
+      "method": "A3",
+      "absolute_error": 0.0
+    }
+  ],
+  "source_config_split_inventory_weights_cache_checkpoint_and_result_hashes": "passed",
+  "same_initialization_minibatches_steps_reference_budget": "passed",
+  "fitting_completed_before_test_evaluation": true,
+  "previous_e2_reproduction": {
+    "image_score_max_error": 0.0,
+    "pixel_ap_max_error": 0.0,
+    "image_auroc_max_error": 0.0
+  },
+  "audit_elapsed_s": 280.0394711000263
+}

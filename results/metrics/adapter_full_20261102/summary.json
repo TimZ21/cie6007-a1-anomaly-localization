@@ -1,0 +1,1273 @@
+{
+  "methods": {
+    "A0": {
+      "clean_image_auroc": {
+        "mean": 98.29252040646344,
+        "sample_sd": 0.22560941580512572,
+        "values": [
+          98.09470264867566,
+          98.24462768615693,
+          98.53823088455772
+        ],
+        "positive_seeds": 3
+      },
+      "clean_pixel_ap": {
+        "mean": 68.30322436991196,
+        "sample_sd": 0.08928394830578984,
+        "values": [
+          68.2068416558542,
+          68.31972341323205,
+          68.38310804064963
+        ],
+        "positive_seeds": 3
+      },
+      "shift_image_auroc": {
+        "mean": 98.34284246765507,
+        "sample_sd": 0.21482538661288866,
+        "values": [
+          98.20402298850574,
+          98.23421622522073,
+          98.59028818923873
+        ],
+        "positive_seeds": 3
+      },
+      "shift_pixel_ap": {
+        "mean": 68.1486712025478,
+        "sample_sd": 0.08275693520360046,
+        "values": [
+          68.05324917917474,
+          68.19194505119516,
+          68.2008193772735
+        ],
+        "positive_seeds": 3
+      }
+    },
+    "A1": {
+      "clean_image_auroc": {
+        "mean": 98.37164750957855,
+        "sample_sd": 0.1733813059150981,
+        "values": [
+          98.21339330334831,
+          98.34457771114442,
+          98.55697151424287
+        ],
+        "positive_seeds": 3
+      },
+      "clean_pixel_ap": {
+        "mean": 70.25834864493156,
+        "sample_sd": 0.3813451772457668,
+        "values": [
+          70.1319391782497,
+          69.95625948390999,
+          70.68684727263496
+        ],
+        "positive_seeds": 3
+      },
+      "shift_image_auroc": {
+        "mean": 98.44105724915319,
+        "sample_sd": 0.14821011160948008,
+        "values": [
+          98.33937198067633,
+          98.37268865567216,
+          98.61111111111111
+        ],
+        "positive_seeds": 3
+      },
+      "shift_pixel_ap": {
+        "mean": 70.12294910262095,
+        "sample_sd": 0.36306000117057896,
+        "values": [
+          70.0041257986701,
+          69.83418934382483,
+          70.53053216536789
+        ],
+        "positive_seeds": 3
+      }
+    }
+  },
+  "paired": {
+    "clean_image_auroc": {
+      "mean": 0.07912710311509841,
+      "sample_sd": 0.053129063893767065,
+      "values": [
+        0.11869065467264761,
+        0.09995002498749272,
+        0.018740629685154886
+      ],
+      "positive_seeds": 3
+    },
+    "clean_pixel_ap": {
+      "mean": 1.9551242750195854,
+      "sample_sd": 0.33461353681449896,
+      "values": [
+        1.9250975223954896,
+        1.6365360706779342,
+        2.3037392319853325
+      ],
+      "positive_seeds": 3
+    },
+    "shift_image_auroc": {
+      "mean": 0.09821478149813363,
+      "sample_sd": 0.06704150892486538,
+      "values": [
+        0.1353489921705915,
+        0.13847243045142932,
+        0.020822921872380107
+      ],
+      "positive_seeds": 3
+    },
+    "shift_pixel_ap": {
+      "mean": 1.9742779000731379,
+      "sample_sd": 0.34433116038726314,
+      "values": [
+        1.9508766194953608,
+        1.6422442926296696,
+        2.3297127880943833
+      ],
+      "positive_seeds": 3
+    },
+    "shift_gain_minus_clean_gain_pixel_ap": {
+      "mean": 0.01915362505355252,
+      "sample_sd": 0.011644466583073963,
+      "values": [
+        0.02577909709987125,
+        0.0057082219517354815,
+        0.025973556109050833
+      ],
+      "positive_seeds": 3
+    }
+  },
+  "by_category": {
+    "bottle": {
+      "methods": {
+        "A0": {
+          "clean_image_auroc": {
+            "mean": 100.0,
+            "sample_sd": 0.0,
+            "values": [
+              100.0,
+              100.0,
+              100.0
+            ],
+            "positive_seeds": 3
+          },
+          "clean_pixel_ap": {
+            "mean": 83.76068268270326,
+            "sample_sd": 0.11220479582953977,
+            "values": [
+              83.85467681225242,
+              83.63646033764515,
+              83.79091089821222
+            ],
+            "positive_seeds": 3
+          },
+          "shift_image_auroc": {
+            "mean": 100.0,
+            "sample_sd": 0.0,
+            "values": [
+              100.0,
+              100.0,
+              100.0
+            ],
+            "positive_seeds": 3
+          },
+          "shift_pixel_ap": {
+            "mean": 83.84844299151693,
+            "sample_sd": 0.0858873556758453,
+            "values": [
+              83.91720446762848,
+              83.75217095829609,
+              83.87595354862624
+            ],
+            "positive_seeds": 3
+          }
+        },
+        "A1": {
+          "clean_image_auroc": {
+            "mean": 100.0,
+            "sample_sd": 0.0,
+            "values": [
+              100.0,
+              100.0,
+              100.0
+            ],
+            "positive_seeds": 3
+          },
+          "clean_pixel_ap": {
+            "mean": 84.64885136844778,
+            "sample_sd": 0.06892942807626848,
+            "values": [
+              84.57646126919775,
+              84.65639295051915,
+              84.71369988562647
+            ],
+            "positive_seeds": 3
+          },
+          "shift_image_auroc": {
+            "mean": 100.0,
+            "sample_sd": 0.0,
+            "values": [
+              100.0,
+              100.0,
+              100.0
+            ],
+            "positive_seeds": 3
+          },
+          "shift_pixel_ap": {
+            "mean": 84.72406208394197,
+            "sample_sd": 0.07349669756836844,
+            "values": [
+              84.64017974280615,
+              84.75484174978892,
+              84.77716475923086
+            ],
+            "positive_seeds": 3
+          }
+        }
+      },
+      "paired": {
+        "clean_image_auroc": {
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_seeds": 0
+        },
+        "clean_pixel_ap": {
+          "mean": 0.8881686857445269,
+          "sample_sd": 0.15205921440903847,
+          "values": [
+            0.7217844569453291,
+            1.0199326128740012,
+            0.9227889874142505
+          ],
+          "positive_seeds": 3
+        },
+        "shift_image_auroc": {
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_seeds": 0
+        },
+        "shift_pixel_ap": {
+          "mean": 0.8756190924250404,
+          "sample_sd": 0.14159312429065427,
+          "values": [
+            0.7229752751776743,
+            1.0026707914928323,
+            0.9012112106046146
+          ],
+          "positive_seeds": 3
+        },
+        "shift_gain_minus_clean_gain_pixel_ap": {
+          "mean": -0.0125495933194865,
+          "sample_sd": 0.012093636757626378,
+          "values": [
+            0.0011908182323452365,
+            -0.01726182138116883,
+            -0.021577776809635907
+          ],
+          "positive_seeds": 1
+        }
+      }
+    },
+    "cable": {
+      "methods": {
+        "A0": {
+          "clean_image_auroc": {
+            "mean": 94.8775612193903,
+            "sample_sd": 0.6768282474153865,
+            "values": [
+              94.28410794602698,
+              94.73388305847077,
+              95.61469265367316
+            ],
+            "positive_seeds": 3
+          },
+          "clean_pixel_ap": {
+            "mean": 62.89805758753446,
+            "sample_sd": 0.3303108887257537,
+            "values": [
+              62.54535055873174,
+              62.94869874341183,
+              63.200123460459814
+            ],
+            "positive_seeds": 3
+          },
+          "shift_image_auroc": {
+            "mean": 95.02852740296517,
+            "sample_sd": 0.6444761598386476,
+            "values": [
+              94.61206896551722,
+              94.70264867566215,
+              95.77086456771615
+            ],
+            "positive_seeds": 3
+          },
+          "shift_pixel_ap": {
+            "mean": 62.36911597406743,
+            "sample_sd": 0.2964639681133232,
+            "values": [
+              62.03881485746173,
+              62.45637710005584,
+              62.61215596468473
+            ],
+            "positive_seeds": 3
+          }
+        },
+        "A1": {
+          "clean_image_auroc": {
+            "mean": 95.11494252873563,
+            "sample_sd": 0.5201439177452813,
+            "values": [
+              94.64017991004498,
+              95.03373313343329,
+              95.67091454272864
+            ],
+            "positive_seeds": 3
+          },
+          "clean_pixel_ap": {
+            "mean": 65.80129802536283,
+            "sample_sd": 0.6809436028915099,
+            "values": [
+              65.65185429268277,
+              65.20748857725988,
+              66.54455120614584
+            ],
+            "positive_seeds": 3
+          },
+          "shift_image_auroc": {
+            "mean": 95.32317174745963,
+            "sample_sd": 0.44463033482844516,
+            "values": [
+              95.01811594202898,
+              95.11806596701649,
+              95.83333333333334
+            ],
+            "positive_seeds": 3
+          },
+          "shift_pixel_ap": {
+            "mean": 65.35694345199967,
+            "sample_sd": 0.6656606748322677,
+            "values": [
+              65.22355800151104,
+              64.76807506246017,
+              66.07919729202781
+            ],
+            "positive_seeds": 3
+          }
+        }
+      },
+      "paired": {
+        "clean_image_auroc": {
+          "mean": 0.2373813093453331,
+          "sample_sd": 0.15938719168132265,
+          "values": [
+            0.3560719640179997,
+            0.2998500749625208,
+            0.05622188905547887
+          ],
+          "positive_seeds": 3
+        },
+        "clean_pixel_ap": {
+          "mean": 2.903240437828368,
+          "sample_sd": 0.5706482231357316,
+          "values": [
+            3.1065037339510297,
+            2.2587898338480485,
+            3.3444277456860263
+          ],
+          "positive_seeds": 3
+        },
+        "shift_image_auroc": {
+          "mean": 0.29464434449443405,
+          "sample_sd": 0.20112452677457648,
+          "values": [
+            0.40604697651176025,
+            0.4154172913543448,
+            0.062468765617197164
+          ],
+          "positive_seeds": 3
+        },
+        "shift_pixel_ap": {
+          "mean": 2.9878274779322402,
+          "sample_sd": 0.6023175303764164,
+          "values": [
+            3.184743144049307,
+            2.311697962404331,
+            3.4670413273430825
+          ],
+          "positive_seeds": 3
+        },
+        "shift_gain_minus_clean_gain_pixel_ap": {
+          "mean": 0.0845870401038719,
+          "sample_sd": 0.03528359183830334,
+          "values": [
+            0.07823941009827706,
+            0.05290812855628246,
+            0.12261358165705616
+          ],
+          "positive_seeds": 3
+        }
+      }
+    },
+    "carpet": {
+      "methods": {
+        "A0": {
+          "clean_image_auroc": {
+            "mean": 100.0,
+            "sample_sd": 0.0,
+            "values": [
+              100.0,
+              100.0,
+              100.0
+            ],
+            "positive_seeds": 3
+          },
+          "clean_pixel_ap": {
+            "mean": 58.250932839498155,
+            "sample_sd": 0.1110344906457217,
+            "values": [
+              58.22049759657843,
+              58.37401115863919,
+              58.15828976327686
+            ],
+            "positive_seeds": 3
+          },
+          "shift_image_auroc": {
+            "mean": 100.0,
+            "sample_sd": 0.0,
+            "values": [
+              100.0,
+              100.0,
+              100.0
+            ],
+            "positive_seeds": 3
+          },
+          "shift_pixel_ap": {
+            "mean": 58.22845464205904,
+            "sample_sd": 0.12826930846221093,
+            "values": [
+              58.20372821243402,
+              58.367287095233586,
+              58.11434861850952
+            ],
+            "positive_seeds": 3
+          }
+        },
+        "A1": {
+          "clean_image_auroc": {
+            "mean": 100.0,
+            "sample_sd": 0.0,
+            "values": [
+              100.0,
+              100.0,
+              100.0
+            ],
+            "positive_seeds": 3
+          },
+          "clean_pixel_ap": {
+            "mean": 60.32489654098402,
+            "sample_sd": 0.4213537783070284,
+            "values": [
+              60.167501972868564,
+              60.00489692395094,
+              60.80229072613257
+            ],
+            "positive_seeds": 3
+          },
+          "shift_image_auroc": {
+            "mean": 100.0,
+            "sample_sd": 0.0,
+            "values": [
+              100.0,
+              100.0,
+              100.0
+            ],
+            "positive_seeds": 3
+          },
+          "shift_pixel_ap": {
+            "mean": 60.28784177192117,
+            "sample_sd": 0.3965594853441739,
+            "values": [
+              60.14863965169312,
+              59.979651219225374,
+              60.73523444484502
+            ],
+            "positive_seeds": 3
+          }
+        }
+      },
+      "paired": {
+        "clean_image_auroc": {
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_seeds": 0
+        },
+        "clean_pixel_ap": {
+          "mean": 2.073963701485861,
+          "sample_sd": 0.5183527790648479,
+          "values": [
+            1.9470043762901312,
+            1.6308857653117457,
+            2.6440009628557064
+          ],
+          "positive_seeds": 3
+        },
+        "shift_image_auroc": {
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_seeds": 0
+        },
+        "shift_pixel_ap": {
+          "mean": 2.0593871298621287,
+          "sample_sd": 0.5139139216141618,
+          "values": [
+            1.9449114392590943,
+            1.6123641239917887,
+            2.6208858263355026
+          ],
+          "positive_seeds": 3
+        },
+        "shift_gain_minus_clean_gain_pixel_ap": {
+          "mean": -0.014576571623732567,
+          "sample_sd": 0.011052415981206662,
+          "values": [
+            -0.0020929370310369677,
+            -0.018521641319956927,
+            -0.023115136520203805
+          ],
+          "positive_seeds": 0
+        }
+      }
+    }
+  },
+  "excluding_selection_category_cable": {
+    "methods": {
+      "A0": {
+        "clean_image_auroc": {
+          "mean": 100.0,
+          "sample_sd": 0.0,
+          "values": [
+            100.0,
+            100.0,
+            100.0
+          ],
+          "positive_seeds": 3
+        },
+        "clean_pixel_ap": {
+          "mean": 71.00580776110071,
+          "sample_sd": 0.0314973326303491,
+          "values": [
+            71.03758720441543,
+            71.00523574814217,
+            70.97460033074454
+          ],
+          "positive_seeds": 3
+        },
+        "shift_image_auroc": {
+          "mean": 100.0,
+          "sample_sd": 0.0,
+          "values": [
+            100.0,
+            100.0,
+            100.0
+          ],
+          "positive_seeds": 3
+        },
+        "shift_pixel_ap": {
+          "mean": 71.038448816788,
+          "sample_sd": 0.03749874910197357,
+          "values": [
+            71.06046634003125,
+            71.05972902676484,
+            70.99515108356789
+          ],
+          "positive_seeds": 3
+        }
+      },
+      "A1": {
+        "clean_image_auroc": {
+          "mean": 100.0,
+          "sample_sd": 0.0,
+          "values": [
+            100.0,
+            100.0,
+            100.0
+          ],
+          "positive_seeds": 3
+        },
+        "clean_pixel_ap": {
+          "mean": 72.4868739547159,
+          "sample_sd": 0.23570589863098942,
+          "values": [
+            72.37198162103316,
+            72.33064493723505,
+            72.75799530587952
+          ],
+          "positive_seeds": 3
+        },
+        "shift_image_auroc": {
+          "mean": 100.0,
+          "sample_sd": 0.0,
+          "values": [
+            100.0,
+            100.0,
+            100.0
+          ],
+          "positive_seeds": 3
+        },
+        "shift_pixel_ap": {
+          "mean": 72.50595192793156,
+          "sample_sd": 0.21714599657455344,
+          "values": [
+            72.39440969724961,
+            72.36724648450715,
+            72.75619960203792
+          ],
+          "positive_seeds": 3
+        }
+      }
+    },
+    "paired": {
+      "clean_image_auroc": {
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "positive_seeds": 0
+      },
+      "clean_pixel_ap": {
+        "mean": 1.4810661936151963,
+        "sample_sd": 0.2618629463666958,
+        "values": [
+          1.3343944166177266,
+          1.3254091890928805,
+          1.783394975134982
+        ],
+        "positive_seeds": 3
+      },
+      "shift_image_auroc": {
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "positive_seeds": 0
+      },
+      "shift_pixel_ap": {
+        "mean": 1.4675031111435668,
+        "sample_sd": 0.25456091935453423,
+        "values": [
+          1.3339433572183594,
+          1.307517457742307,
+          1.7610485184700337
+        ],
+        "positive_seeds": 3
+      },
+      "shift_gain_minus_clean_gain_pixel_ap": {
+        "mean": -0.013563082471629665,
+        "sample_sd": 0.01157173306779458,
+        "values": [
+          -0.00045105939936718187,
+          -0.017891731350573536,
+          -0.022346456664948278
+        ],
+        "positive_seeds": 0
+      }
+    }
+  },
+  "condition_pairs": [
+    {
+      "category": "bottle",
+      "seed": 0,
+      "condition": "clean",
+      "pixel_ap_delta_pp": 0.721784456945318,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "bottle",
+      "seed": 0,
+      "condition": "brightness_070",
+      "pixel_ap_delta_pp": 0.7678243680630747,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "bottle",
+      "seed": 0,
+      "condition": "brightness_130",
+      "pixel_ap_delta_pp": 0.6569271828182011,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "bottle",
+      "seed": 0,
+      "condition": "contrast_070",
+      "pixel_ap_delta_pp": 0.7149564123302143,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "bottle",
+      "seed": 0,
+      "condition": "contrast_130",
+      "pixel_ap_delta_pp": 0.743111624061632,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "bottle",
+      "seed": 0,
+      "condition": "gamma_070",
+      "pixel_ap_delta_pp": 0.6950062334574625,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "bottle",
+      "seed": 0,
+      "condition": "gamma_140",
+      "pixel_ap_delta_pp": 0.7600258303354757,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "bottle",
+      "seed": 1,
+      "condition": "clean",
+      "pixel_ap_delta_pp": 1.0199326128739972,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "bottle",
+      "seed": 1,
+      "condition": "brightness_070",
+      "pixel_ap_delta_pp": 1.0981119811914963,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "bottle",
+      "seed": 1,
+      "condition": "brightness_130",
+      "pixel_ap_delta_pp": 0.9212861738049694,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "bottle",
+      "seed": 1,
+      "condition": "contrast_070",
+      "pixel_ap_delta_pp": 0.9295274038949031,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "bottle",
+      "seed": 1,
+      "condition": "contrast_130",
+      "pixel_ap_delta_pp": 1.0629873795141465,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "bottle",
+      "seed": 1,
+      "condition": "gamma_070",
+      "pixel_ap_delta_pp": 0.9739981330781466,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "bottle",
+      "seed": 1,
+      "condition": "gamma_140",
+      "pixel_ap_delta_pp": 1.0301136774733655,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "bottle",
+      "seed": 2,
+      "condition": "clean",
+      "pixel_ap_delta_pp": 0.922788987414247,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "bottle",
+      "seed": 2,
+      "condition": "brightness_070",
+      "pixel_ap_delta_pp": 0.945419225148858,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "bottle",
+      "seed": 2,
+      "condition": "brightness_130",
+      "pixel_ap_delta_pp": 0.8386684315567994,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "bottle",
+      "seed": 2,
+      "condition": "contrast_070",
+      "pixel_ap_delta_pp": 0.8697633457627196,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "bottle",
+      "seed": 2,
+      "condition": "contrast_130",
+      "pixel_ap_delta_pp": 0.9646953971690242,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "bottle",
+      "seed": 2,
+      "condition": "gamma_070",
+      "pixel_ap_delta_pp": 0.8705061425985372,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "bottle",
+      "seed": 2,
+      "condition": "gamma_140",
+      "pixel_ap_delta_pp": 0.9182147213916414,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "cable",
+      "seed": 0,
+      "condition": "clean",
+      "pixel_ap_delta_pp": 3.106503733951027,
+      "image_auroc_delta_pp": 0.3560719640179899
+    },
+    {
+      "category": "cable",
+      "seed": 0,
+      "condition": "brightness_070",
+      "pixel_ap_delta_pp": 3.229675529516607,
+      "image_auroc_delta_pp": 0.46851574212893876
+    },
+    {
+      "category": "cable",
+      "seed": 0,
+      "condition": "brightness_130",
+      "pixel_ap_delta_pp": 3.502861273872049,
+      "image_auroc_delta_pp": 0.24362818590705215
+    },
+    {
+      "category": "cable",
+      "seed": 0,
+      "condition": "contrast_070",
+      "pixel_ap_delta_pp": 3.263399536173872,
+      "image_auroc_delta_pp": 0.4310344827586188
+    },
+    {
+      "category": "cable",
+      "seed": 0,
+      "condition": "contrast_130",
+      "pixel_ap_delta_pp": 2.988317546320296,
+      "image_auroc_delta_pp": 0.6371814092953398
+    },
+    {
+      "category": "cable",
+      "seed": 0,
+      "condition": "gamma_070",
+      "pixel_ap_delta_pp": 3.025160018076689,
+      "image_auroc_delta_pp": 0.41229385307346433
+    },
+    {
+      "category": "cable",
+      "seed": 0,
+      "condition": "gamma_140",
+      "pixel_ap_delta_pp": 3.099044960336328,
+      "image_auroc_delta_pp": 0.24362818590704105
+    },
+    {
+      "category": "cable",
+      "seed": 1,
+      "condition": "clean",
+      "pixel_ap_delta_pp": 2.2587898338480406,
+      "image_auroc_delta_pp": 0.2998500749625155
+    },
+    {
+      "category": "cable",
+      "seed": 1,
+      "condition": "brightness_070",
+      "pixel_ap_delta_pp": 2.3353729670168244,
+      "image_auroc_delta_pp": 0.5434782608695787
+    },
+    {
+      "category": "cable",
+      "seed": 1,
+      "condition": "brightness_130",
+      "pixel_ap_delta_pp": 2.6795836301621523,
+      "image_auroc_delta_pp": 0.14992503748126884
+    },
+    {
+      "category": "cable",
+      "seed": 1,
+      "condition": "contrast_070",
+      "pixel_ap_delta_pp": 2.3116309797010848,
+      "image_auroc_delta_pp": 0.7308845577211232
+    },
+    {
+      "category": "cable",
+      "seed": 1,
+      "condition": "contrast_130",
+      "pixel_ap_delta_pp": 2.1107258811303153,
+      "image_auroc_delta_pp": 0.037481259370308884
+    },
+    {
+      "category": "cable",
+      "seed": 1,
+      "condition": "gamma_070",
+      "pixel_ap_delta_pp": 2.123987988443443,
+      "image_auroc_delta_pp": 0.6184407796101965
+    },
+    {
+      "category": "cable",
+      "seed": 1,
+      "condition": "gamma_140",
+      "pixel_ap_delta_pp": 2.308886327972137,
+      "image_auroc_delta_pp": 0.41229385307347544
+    },
+    {
+      "category": "cable",
+      "seed": 2,
+      "condition": "clean",
+      "pixel_ap_delta_pp": 3.3444277456860294,
+      "image_auroc_delta_pp": 0.05622188905547443
+    },
+    {
+      "category": "cable",
+      "seed": 2,
+      "condition": "brightness_070",
+      "pixel_ap_delta_pp": 3.3716361651032978,
+      "image_auroc_delta_pp": 0.07496251874062887
+    },
+    {
+      "category": "cable",
+      "seed": 2,
+      "condition": "brightness_130",
+      "pixel_ap_delta_pp": 3.806559333317283,
+      "image_auroc_delta_pp": -0.24362818590705215
+    },
+    {
+      "category": "cable",
+      "seed": 2,
+      "condition": "contrast_070",
+      "pixel_ap_delta_pp": 3.4751994628006155,
+      "image_auroc_delta_pp": 0.24362818590702995
+    },
+    {
+      "category": "cable",
+      "seed": 2,
+      "condition": "contrast_130",
+      "pixel_ap_delta_pp": 3.4437718566398656,
+      "image_auroc_delta_pp": 0.14992503748125774
+    },
+    {
+      "category": "cable",
+      "seed": 2,
+      "condition": "gamma_070",
+      "pixel_ap_delta_pp": 3.366161903757825,
+      "image_auroc_delta_pp": 0.2248875562218977
+    },
+    {
+      "category": "cable",
+      "seed": 2,
+      "condition": "gamma_140",
+      "pixel_ap_delta_pp": 3.3389192424395864,
+      "image_auroc_delta_pp": -0.07496251874062887
+    },
+    {
+      "category": "carpet",
+      "seed": 0,
+      "condition": "clean",
+      "pixel_ap_delta_pp": 1.947004376290129,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "carpet",
+      "seed": 0,
+      "condition": "brightness_070",
+      "pixel_ap_delta_pp": 1.8661584388065755,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "carpet",
+      "seed": 0,
+      "condition": "brightness_130",
+      "pixel_ap_delta_pp": 1.915134289691145,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "carpet",
+      "seed": 0,
+      "condition": "contrast_070",
+      "pixel_ap_delta_pp": 1.8804608164618375,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "carpet",
+      "seed": 0,
+      "condition": "contrast_130",
+      "pixel_ap_delta_pp": 1.9793165091112286,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "carpet",
+      "seed": 0,
+      "condition": "gamma_070",
+      "pixel_ap_delta_pp": 1.821436947791899,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "carpet",
+      "seed": 0,
+      "condition": "gamma_140",
+      "pixel_ap_delta_pp": 2.206961633691795,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "carpet",
+      "seed": 1,
+      "condition": "clean",
+      "pixel_ap_delta_pp": 1.6308857653117403,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "carpet",
+      "seed": 1,
+      "condition": "brightness_070",
+      "pixel_ap_delta_pp": 1.552543641629367,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "carpet",
+      "seed": 1,
+      "condition": "brightness_130",
+      "pixel_ap_delta_pp": 1.5471858519172654,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "carpet",
+      "seed": 1,
+      "condition": "contrast_070",
+      "pixel_ap_delta_pp": 1.6549255303742294,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "carpet",
+      "seed": 1,
+      "condition": "contrast_130",
+      "pixel_ap_delta_pp": 1.5385276753682064,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "carpet",
+      "seed": 1,
+      "condition": "gamma_070",
+      "pixel_ap_delta_pp": 1.4622011099401089,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "carpet",
+      "seed": 1,
+      "condition": "gamma_140",
+      "pixel_ap_delta_pp": 1.918800934721543,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "carpet",
+      "seed": 2,
+      "condition": "clean",
+      "pixel_ap_delta_pp": 2.644000962855708,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "carpet",
+      "seed": 2,
+      "condition": "brightness_070",
+      "pixel_ap_delta_pp": 2.497652584767951,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "carpet",
+      "seed": 2,
+      "condition": "brightness_130",
+      "pixel_ap_delta_pp": 2.712230817134609,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "carpet",
+      "seed": 2,
+      "condition": "contrast_070",
+      "pixel_ap_delta_pp": 2.4921493989304544,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "carpet",
+      "seed": 2,
+      "condition": "contrast_130",
+      "pixel_ap_delta_pp": 2.8192802766328517,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "carpet",
+      "seed": 2,
+      "condition": "gamma_070",
+      "pixel_ap_delta_pp": 2.5662772676081524,
+      "image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "carpet",
+      "seed": 2,
+      "condition": "gamma_140",
+      "pixel_ap_delta_pp": 2.63772461293893,
+      "image_auroc_delta_pp": 0.0
+    }
+  ],
+  "category_seed_pairs": [
+    {
+      "category": "bottle",
+      "seed": 0,
+      "clean_pixel_ap_delta_pp": 0.721784456945318,
+      "clean_image_auroc_delta_pp": 0.0,
+      "shift_pixel_ap_delta_pp": 0.7229752751776767,
+      "shift_image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "bottle",
+      "seed": 1,
+      "clean_pixel_ap_delta_pp": 1.0199326128739972,
+      "clean_image_auroc_delta_pp": 0.0,
+      "shift_pixel_ap_delta_pp": 1.0026707914928379,
+      "shift_image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "bottle",
+      "seed": 2,
+      "clean_pixel_ap_delta_pp": 0.922788987414247,
+      "clean_image_auroc_delta_pp": 0.0,
+      "shift_pixel_ap_delta_pp": 0.9012112106045967,
+      "shift_image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "cable",
+      "seed": 0,
+      "clean_pixel_ap_delta_pp": 3.106503733951027,
+      "clean_image_auroc_delta_pp": 0.3560719640179899,
+      "shift_pixel_ap_delta_pp": 3.184743144049307,
+      "shift_image_auroc_delta_pp": 0.4060469765117425
+    },
+    {
+      "category": "cable",
+      "seed": 1,
+      "clean_pixel_ap_delta_pp": 2.2587898338480406,
+      "clean_image_auroc_delta_pp": 0.2998500749625155,
+      "shift_pixel_ap_delta_pp": 2.311697962404326,
+      "shift_image_auroc_delta_pp": 0.41541729135432526
+    },
+    {
+      "category": "cable",
+      "seed": 2,
+      "clean_pixel_ap_delta_pp": 3.3444277456860294,
+      "clean_image_auroc_delta_pp": 0.05622188905547443,
+      "shift_pixel_ap_delta_pp": 3.467041327343079,
+      "shift_image_auroc_delta_pp": 0.06246876561718887
+    },
+    {
+      "category": "carpet",
+      "seed": 0,
+      "clean_pixel_ap_delta_pp": 1.947004376290129,
+      "clean_image_auroc_delta_pp": 0.0,
+      "shift_pixel_ap_delta_pp": 1.94491143925908,
+      "shift_image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "carpet",
+      "seed": 1,
+      "clean_pixel_ap_delta_pp": 1.6308857653117403,
+      "clean_image_auroc_delta_pp": 0.0,
+      "shift_pixel_ap_delta_pp": 1.6123641239917863,
+      "shift_image_auroc_delta_pp": 0.0
+    },
+    {
+      "category": "carpet",
+      "seed": 2,
+      "clean_pixel_ap_delta_pp": 2.644000962855708,
+      "clean_image_auroc_delta_pp": 0.0,
+      "shift_pixel_ap_delta_pp": 2.6208858263354915,
+      "shift_image_auroc_delta_pp": 0.0
+    }
+  ],
+  "stability": {
+    "positive_category_means": 3,
+    "positive_category_seed_means": 9,
+    "positive_shift_condition_pairs": 54,
+    "total_categories": 3,
+    "total_category_seed_pairs": 9,
+    "total_shift_condition_pairs": 54,
+    "worst_shift_condition_pair": {
+      "category": "bottle",
+      "seed": 0,
+      "condition": "brightness_130",
+      "pixel_ap_delta_pp": 0.6569271828182011,
+      "image_auroc_delta_pp": 0.0
+    },
+    "best_shift_condition_pair": {
+      "category": "cable",
+      "seed": 2,
+      "condition": "brightness_130",
+      "pixel_ap_delta_pp": 3.806559333317283,
+      "image_auroc_delta_pp": -0.24362818590705215
+    }
+  },
+  "strict_category_seed_sign_stability": true,
+  "practical_macro_gate_met": true,
+  "costs": {
+    "A0": {
+      "head_fit_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scoring_ms_per_image": 37.444567740958206
+    },
+    "A1": {
+      "head_fit_seconds": [
+        40.504901900014374,
+        40.158443699998315,
+        40.11400259996299,
+        41.16586479998659,
+        40.10051499999827,
+        40.150140499987174,
+        40.094516600016505,
+        39.95715809997637,
+        40.088014299981296
+      ],
+      "scoring_ms_per_image": 39.59912424493695
+    }
+  }
+}

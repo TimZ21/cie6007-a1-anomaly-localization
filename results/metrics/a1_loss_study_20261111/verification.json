@@ -1,0 +1,168 @@
+{
+  "status": "passed",
+  "utc": "2026-11-11T10:16:12.795323+00:00",
+  "evaluations": 1260,
+  "new_evaluations": 630,
+  "reused_evaluations": 630,
+  "new_heads": 90,
+  "max_errors": {
+    "pixel_ap": 0.0,
+    "image_auroc": 0.0,
+    "image_score": 0.0
+  },
+  "independent_sklearn": [
+    {
+      "category": "bottle",
+      "arm": "L1",
+      "sklearn_error": 2.220446049250313e-16
+    },
+    {
+      "category": "bottle",
+      "arm": "L2",
+      "sklearn_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "cable",
+      "arm": "L1",
+      "sklearn_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "cable",
+      "arm": "L2",
+      "sklearn_error": 0.0
+    },
+    {
+      "category": "capsule",
+      "arm": "L1",
+      "sklearn_error": 0.0
+    },
+    {
+      "category": "capsule",
+      "arm": "L2",
+      "sklearn_error": 0.0
+    },
+    {
+      "category": "carpet",
+      "arm": "L1",
+      "sklearn_error": 0.0
+    },
+    {
+      "category": "carpet",
+      "arm": "L2",
+      "sklearn_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "grid",
+      "arm": "L1",
+      "sklearn_error": 0.0
+    },
+    {
+      "category": "grid",
+      "arm": "L2",
+      "sklearn_error": 5.551115123125783e-17
+    },
+    {
+      "category": "hazelnut",
+      "arm": "L1",
+      "sklearn_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "hazelnut",
+      "arm": "L2",
+      "sklearn_error": 0.0
+    },
+    {
+      "category": "leather",
+      "arm": "L1",
+      "sklearn_error": 5.551115123125783e-17
+    },
+    {
+      "category": "leather",
+      "arm": "L2",
+      "sklearn_error": 0.0
+    },
+    {
+      "category": "metal_nut",
+      "arm": "L1",
+      "sklearn_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "metal_nut",
+      "arm": "L2",
+      "sklearn_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "pill",
+      "arm": "L1",
+      "sklearn_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "pill",
+      "arm": "L2",
+      "sklearn_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "screw",
+      "arm": "L1",
+      "sklearn_error": 0.0
+    },
+    {
+      "category": "screw",
+      "arm": "L2",
+      "sklearn_error": 2.220446049250313e-16
+    },
+    {
+      "category": "tile",
+      "arm": "L1",
+      "sklearn_error": 1.1102230246251565e-16
+    },
+    {
+      "category": "tile",
+      "arm": "L2",
+      "sklearn_error": 0.0
+    },
+    {
+      "category": "toothbrush",
+      "arm": "L1",
+      "sklearn_error": 0.0
+    },
+    {
+      "category": "toothbrush",
+      "arm": "L2",
+      "sklearn_error": 0.0
+    },
+    {
+      "category": "transistor",
+      "arm": "L1",
+      "sklearn_error": 5.551115123125783e-17
+    },
+    {
+      "category": "transistor",
+      "arm": "L2",
+      "sklearn_error": 0.0
+    },
+    {
+      "category": "wood",
+      "arm": "L1",
+      "sklearn_error": 0.0
+    },
+    {
+      "category": "wood",
+      "arm": "L2",
+      "sklearn_error": 0.0
+    },
+    {
+      "category": "zipper",
+      "arm": "L1",
+      "sklearn_error": 5.551115123125783e-17
+    },
+    {
+      "category": "zipper",
+      "arm": "L2",
+      "sklearn_error": 5.551115123125783e-17
+    }
+  ],
+  "all_new_heads_finished_before_evaluation": true,
+  "old_files_unchanged": true,
+  "audit_elapsed_s": 4914.955882499926
+}
