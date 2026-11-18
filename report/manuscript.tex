@@ -1,0 +1,113 @@
+\begin{abstract}
+Illumination changes can disturb few-shot anomaly localization with frozen patch features. We study A1, a 24,992-parameter residual adapter trained on normal images using illumination consistency and a clean-feature anchor, with a frozen DINOv2 encoder and exact nearest-neighbor scoring. After development on three MVTec AD categories, the fixed 16-shot recipe improves six-shift pixel average precision by $1.183\pm0.249$ percentage points on twelve additional categories and $1.341\pm0.249$ points across all fifteen. Paired ablations examine capacity, reference budget, spatial context and loss design. Wider and spatial adapters offer little additional benefit under the common training budget, while stronger feature constraints reduce AP. More references modestly improve both adapted and unadapted detectors at increased memory and scoring cost. These findings support the compact anchored adapter and highlight the balance between illumination consistency and useful feature separation.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+Industrial anomaly localization must identify defects absent from training. A few-shot detector compares test patches against a small normal reference set. Illumination changes can alter these distances even when an object's condition is unchanged. Making normal views more consistent may help matching, but excessive invariance can remove distinctions needed to localize defects.
+
+We ask whether a lightweight adapter can improve illumination robustness without discarding useful pretrained geometry, and whether more capacity, normal data, spatial context or stronger feature constraints further help. Our contribution is a compact normal-only adaptation recipe and controlled evidence about its behavior. The encoder and detector remain fixed, reference sets and training schedules are paired, and unsuccessful variants are reported alongside gains.
+
+\section{Related work}
+MVTec AD provides object and texture categories with normal training images and annotated test defects~\cite{bergmann2019mvtec}. AnomalyDINO~\cite{damm2025anomalydino} combines frozen DINOv2~\cite{oquab2024dinov2} patch features with nearest-neighbor matching, connecting pretrained representations to distance-based learning.
+
+Feature adaptation and consistency motivate our design. SimpleNet~\cite{liu2023simplenet} combines a shallow adapter, synthesized feature anomalies and a discriminator. COFT-AD~\cite{liao2024coftad} uses contrastive fine-tuning with cross-instance positives and synthesized negatives. SPACE~\cite{kim2025space} combines augmented-view consistency, fixed-teacher distillation and spatial selection. A1 builds on these established ideas while using only normal-view consistency and a clean-feature anchor, with no active synthetic-defect loss and no discriminator. We evaluate this compact combination under a matched few-shot protocol and measure its capacity, data and loss trade-offs.
+
+\section{Method}
+\label{sec:method}
+\subsection{Frozen baseline and residual adapter}
+Let $z_p(x)\in\mathbb{R}^{384}$ be a unit-normalized DINOv2 ViT-S/14 feature at patch $p$. The recorded square images yield a $32\times32$ feature grid at $448\times448$ input resolution. A0 is our matched AnomalyDINO reproduction and uses these features directly. A1 applies
+\begin{equation}
+\begin{aligned}
+r_\theta(z)&=W_u\operatorname{GELU}(W_dz+b_d)+b_u,\\
+h_\theta(z)&=\operatorname{normalize}(z+r_\theta(z)).
+\end{aligned}
+\label{eq:adapter}
+\end{equation}
+The $384\rightarrow32\rightarrow384$ mapping has 24,992 trainable parameters. Zero-initialized output weights and bias preserve the initial normalized features; the encoder stays frozen.
+
+\subsection{Anchored illumination objective}
+For aligned normal features $(z,z^T)$ under photometric transform $T$, A1 minimizes
+\begin{align}
+\mathcal{L}_{\mathrm{light}}&=\mathbb{E}\|h_\theta(z^T)-h_\theta(z)\|_2^2,\\
+\mathcal{L}_{\mathrm{anchor}}&=\mathbb{E}\|h_\theta(z)-z\|_2^2,\\
+\mathcal{L}_{\mathrm{A1}}&=\mathcal{L}_{\mathrm{light}}+0.1\mathcal{L}_{\mathrm{anchor}}.
+\label{eq:loss}
+\end{align}
+Squared differences sum feature coordinates before averaging patches. Consistency encourages agreement across lighting; anchoring limits displacement from clean pretrained geometry. A constant unit-vector mapping minimizes consistency alone, whereas anchoring penalizes that solution. For unit vectors, $\tfrac12\|a-b\|_2^2=1-a^\top b$. Thus the two losses control angular agreement: consistency aligns lighting views, while anchoring limits the clean direction's movement. Unit normalization rules out reducing loss by shrinking feature norms, but does not prevent different patches from sharing one direction. The no-anchor ablation tests the importance of this distinction for localization. The adapter therefore learns the geometry used by the unchanged nearest-neighbor detector.
+
+\subsection{Reference matching and localization}
+For normal images $x_i$ and eight rotations $R$ at $45^\circ$ intervals, we construct
+\begin{align}
+\mathcal{M}_\theta&=\{h_\theta(z_p(Rx_i)):i=1,\ldots,n;\ R;\ p\},\\
+s_p(x)&=\min_{b\in\mathcal{M}_\theta}\tfrac12\|h_\theta(z_p(x))-b\|_2^2.
+\label{eq:score}
+\end{align}
+A0 uses the identity for bank and query. At $n=16$, the unreduced bank contains 131,072 float32 vectors. Image scores average the highest 1\% of patch scores (ten here). Patch maps are resized to native resolution, smoothed with Gaussian $\sigma=4$ native pixels, then resized to $224\times224$ for metrics; masks use nearest-neighbor resizing. Both methods share exact search and postprocessing, without a fitted threshold or test-time adaptation.
+
+\section{Experiments}
+\label{sec:experiments}
+\subsection{Setup and paired evaluation}
+A1 was developed on bottle, cable and carpet. We then froze its recipe and evaluated the other twelve categories, each fitting a category-specific normal-only head. This initial extension is the primary fixed-recipe validation. Later ablation designs were informed by earlier outcomes and fixed before their own evaluation; all fifteen categories had already been inspected.
+
+The all-category studies use all 1,725 official test images, including 1,258 anomalies, and seeds 0/1/2. Subset studies use the complete test split of each included category. The seven conditions are clean, brightness 0.7/1.3, contrast 0.7/1.3 and gamma 0.7/1.4. Gamma is absent from training. A1 uses 12 fitting and four diagnostic normal images, all 16 entering the bank. Four training transforms use brightness/contrast 0.85/1.15. AdamW uses learning rate $10^{-3}$, weight decay $10^{-4}$ and 1,000 fixed steps with 512 active center patches. Final checkpoints are saved before each study's new-arm evaluation. No real defect labels enter fitting, and neither diagnostics nor test scores select checkpoints.
+
+Pixel AP pools all normal and anomalous test pixels within category/seed/condition. The primary outcome averages six shifted conditions with equal category and condition weights; clean AP and image AUROC are secondary. Differences pair identical category/seed/condition cells before aggregation. We report mean $\pm$ sample SD over three seed aggregates. Category changes above $+0.1$ pp improve, below $-0.1$ pp degrade, and the inclusive interval between them ties. This descriptive rule is not a significance test.
+
+\subsection{Main A0--A1 comparison}
+On the initial twelve-category extension, A1 raises shifted AP from $54.396\pm0.559$ to $55.579\pm0.626$, a paired gain of $1.183\pm0.249$ pp. The development-group gain is $1.974\pm0.344$ pp. Across all fifteen categories, the gain is $1.341\pm0.249$ pp, positive in all three seed aggregates; 12 categories improve, one ties and two degrade. Table~\ref{tab:all} retains the original controls and all fifteen-category configurations.
+
+Clean AP improves by $1.082\pm0.232$ pp across all fifteen categories. Using unrounded, seed-paired differences, the shifted gain exceeds the clean gain by $0.260\pm0.021$ pp across all fifteen and $0.320\pm0.024$ pp on the initial twelve-category extension. A1 therefore improves general localization and provides a smaller additional illumination-robustness benefit.
+
+The extra robustness benefit varies by condition (Table~\ref{tab:explore-conditions}). Brightness 1.3 gains 2.461 pp, versus 1.082 pp on clean images; gamma 0.7/1.4 gains 1.109/1.085 pp. Thus the additional benefit is largest under brightness 1.3, while gamma gains largely track the clean localization improvement.
+
+\begin{table*}[t]
+\centering
+\caption{All-fifteen-category results, mean $\pm$ sample SD across three paired seeds. Scores are percentages; shift averages six perturbations with equal category weights. A1 is MLP32/16 with the original loss. L1/L2 retain its architecture and budget; 32-shot arms double the reference-image budget.}
+\label{tab:all}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrrrr}\toprule
+Method & Shots & Parameters & Shift pixel AP & Clean pixel AP & Shift image AUROC\\\midrule
+A0 & 16 & 0 & $\gain{57.147}{0.458}$ & $\gain{57.647}{0.441}$ & $\gain{98.141}{0.158}$\\
+A1 (MLP32) & 16 & 24,992 & $\gain{58.488}{0.574}$ & $\gain{58.729}{0.566}$ & $\gain{98.381}{0.168}$\\
+MLP64 & 16 & 49,600 & $\gain{58.443}{0.599}$ & $\gain{58.677}{0.588}$ & $\gain{98.373}{0.159}$\\
+MLP768 & 16 & 590,976 & $\gain{58.466}{0.650}$ & $\gain{58.694}{0.635}$ & $\gain{98.347}{0.170}$\\
+L1: anchor 0.2 & 16 & 24,992 & $\gain{58.146}{0.539}$ & $\gain{58.408}{0.534}$ & $\gain{98.352}{0.159}$\\
+L2: fixed teacher & 16 & 24,992 & $\gain{57.466}{0.446}$ & $\gain{57.786}{0.432}$ & $\gain{98.255}{0.163}$\\\midrule
+A0 & 32 & 0 & $\gain{57.547}{0.134}$ & $\gain{58.094}{0.091}$ & $\gain{98.405}{0.172}$\\
+MLP32 & 32 & 24,992 & $\gain{58.881}{0.157}$ & $\gain{59.121}{0.117}$ & $\gain{98.675}{0.163}$\\
+MLP64 & 32 & 49,600 & $\gain{58.939}{0.247}$ & $\gain{59.172}{0.213}$ & $\gain{98.673}{0.169}$\\
+CNN1 & 32 & 86,528 & $\gain{58.957}{0.287}$ & $\gain{59.183}{0.246}$ & $\gain{98.661}{0.156}$\\
+CNN3 & 32 & 160,384 & $\gain{58.852}{0.197}$ & $\gain{59.074}{0.164}$ & $\gain{98.639}{0.180}$\\\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Capacity, data and spatial ablations}
+All capacity/CNN arms keep A1's loss, optimizer and 1,000-step budget.
+
+\textbf{Capacity.} Widening the hidden layer from 32 to 64 changes shifted AP by $-0.045\pm0.031$ pp at 16 shots and $+0.058\pm0.092$ pp at 32 shots. Expanding the 16-shot head to $384\rightarrow768\rightarrow384$ changes shifted AP by $-0.022\pm0.077$ pp across all fifteen categories. The original-three gain ($+0.306\pm0.141$ pp) does not extend to the remaining twelve ($-0.104\pm0.131$ pp). Four categories improve, three tie and eight degrade. Leather, tile, grid and carpet improve, while capsule and pill lose 1.851 and 2.224 pp; grid/tile have mixed seed directions. Clean AP and shifted image AUROC change by $-0.034\pm0.070$ and $-0.034\pm0.006$ pp. Thus MLP768 uses $23.65\times$ as many parameters without an overall localization gain. Appendix~\ref{app:results} gives the complete category and group comparisons.
+
+\textbf{Reference budget.} Nested 32-shot subsets preserve the original image roles and add 12 fitting plus four diagnostic images; all 32 enter the bank. MLP32 gains $0.393\pm0.522$ pp and MLP64 gains $0.496\pm0.509$ pp, while A0 gains $0.400\pm0.453$ pp. MLP32's advantage over its same-budget A0 changes by only $-0.007\pm0.209$ pp, indicating similar gains from additional normal images in the adapted and unadapted detectors. Fitting data and bank size increase together, leaving their separate contributions unresolved.
+
+\textbf{Spatial context.} CNN1/CNN3 use one/three $3\times3$ spatial residual blocks at 32 shots and hidden width 64. Real same-view neighborhoods preserve full-grid boundary behavior; reference rotations are processed separately. CNN1 exceeds MLP64-32 by only $0.018\pm0.039$ pp, with 6/3/6 improved/tied/degraded categories. CNN3 loses $0.104\pm0.092$ pp relative to CNN1. These comparisons evaluate architectures with different parameter counts under a common training budget.
+
+\subsection{Anchor and loss ablations}
+On the three development categories, removing only the anchor lowers shifted AP from $70.123\pm0.363$ to $62.821\pm0.386$, a paired loss of $7.302\pm0.079$ pp. Synthetic cross-light difference magnitudes retain only 3.8--4.3\% of the frozen clean-view difference magnitude, versus 94--96\% for A1, while feature norms remain one. This links anchor removal to contracted differences and worse localization in that experiment.
+
+The all-category loss study fixes MLP32/16-shot. L1 increases the anchor coefficient to 0.2. L2 replaces the consistency term with $\mathbb{E}\|h_\theta(z^T)-\operatorname{stopgrad}(z)\|_2^2$, retaining the 0.1 clean anchor; its teacher is the frozen feature, not the adapted output. L1 and L2 lose $0.342\pm0.061$ and $1.022\pm0.186$ pp relative to A1. Every seed aggregate and every condition's all-category AP mean declines. Category directions are 3/2/10 and 2/2/11. Both remain above A0 overall; their consistent declines relative to A1 support retaining its original loss.
+
+\section{Discussion and limitations}
+\label{sec:discussion}
+\textbf{Consistency and feature preservation.} Lower consistency error alone is insufficient for better localization. On held-out normal images, A1 reduces illumination-consistency error from 0.003027 to 0.001390, a 54.1\% reduction relative to A0 (Table~\ref{tab:explore-diagnostics}). MLP768 reduces this error by a further 9.0\% relative to A1, while increasing clean-feature displacement by 37.4\%, without better overall AP. Relative to A1, L1 reduces clean displacement by 44\% but increases consistency error by 20\%; L2 reduces displacement by 88\% and fixed-teacher error by 58\%, while increasing consistency error by 73\%. Both reduce AP relative to A1. Together, these diagnostics favor a balance between lighting consistency and clean-feature preservation over maximizing either alone. They describe normal-feature geometry; the mechanisms behind individual defect failures remain unresolved.
+
+\textbf{Category variation and failure.} Capsule gains 8.000 pp and contributes 56.35\% of the initial extension's summed gains, whereas hazelnut and metal\_nut lose 0.359 and 0.311 pp. Effects also differ between groups: CNN1 versus MLP64-32 changes AP by $-0.132$ pp on the original three categories and $+0.055$ pp on the prior twelve. The fixed cable failure in Fig.~\ref{fig:cable} drops from 59.43\% (A0) to 35.52\% (A1) per-image pixel AP under gamma 1.4 (seed 0). The damaged outer edge is less distinct from normal texture in A1's heatmap, consistent with poorer pixel ranking. This failure is compatible with the normal-only objective: it aligns lighting views but does not explicitly enforce defect--normal separation.
+
+\textbf{Cost.} On the RTX 4060 Laptop GPU, cached adapter-plus-neighbor scoring takes 39.53 ms/image for A1, 76.10 for MLP32-32 and 77.22/78.28 for CNN1/CNN3. The bank doubles from 192 to 384 MiB at 32 shots. A separate same-session three-category benchmark measures A1/MLP768 at 17.45/20.34 ms per training step and 39.99/40.49 ms per cached scoring image. These are component measurements: scoring excludes encoder extraction, transfers and map postprocessing, and training-step timing excludes feature extraction. The larger reference budget yields modest AP gains while approximately doubling bank memory and cached scoring time.
+
+\textbf{Scope.} Evidence covers one dataset and synthetic global shifts. Three seeds share test images; their SD describes seed variability rather than statistical significance. Later ablations, including MLP768 selection, revisit inspected categories; the no-anchor study covers the original three. The common training budget does not establish separately tuned architecture optima or isolate expansion order and spatial context at equal capacity. The common 224-pixel metric grid supports matched comparisons within this study; differently evaluated methods require separate benchmarking.
+
+\section{Conclusion}
+The original anchored MLP improves average few-shot localization with a frozen backbone and unchanged detector. Its fixed-recipe extension gains 1.183 pp on twelve additional categories and 1.341 pp over all fifteen. More references provide modest gains; MLP64, CNN depth and stronger feature constraints offer little or no additional benefit. The MLP768 gain on three categories disappears in the full fifteen-category average: texture gains are offset by other categories. We retain MLP32/16-shot A1 for its balance of localization gain, reference-bank size and measured scoring cost.
+
+\section*{Acknowledgements}
+We credit MVTec AD, DINOv2, AnomalyDINO and the CVPR author kit to their authors. ChatGPT/Codex assisted with literature review, implementation, execution, auditing, analysis and writing. Code, configurations and complete paired results remain in the project repository; explained core code is included in Appendix~\ref{app:code}.

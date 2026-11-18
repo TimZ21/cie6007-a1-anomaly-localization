@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-18",
+  "scope": "Editorial revision only",
+  "scientific_snapshot": "43c6a868be8c2cd1aef9a5f5bde1990b6efe6238",
+  "scientific_tag": "submission-v1",
+  "source_files_compared": 27,
+  "changed_source_files": [
+    "manuscript.tex"
+  ],
+  "unchanged_equations_main_table_citations": true,
+  "numerical_values_and_conclusions_review": "passed",
+  "independent_editorial_review": "passed",
+  "new_experiments": false,
+  "architecture_configuration_or_result_changes": false,
+  "previous_manuscript_sha256": "d5df4189cc82ba671bede585afb26405bf171b0e63aad2733e47957b503ce08b",
+  "manuscript_sha256": "4c3cb12f4cf02bf4f2a7fd946c2bfd0ba93a673fd20e35e76b0937f6e1b11025",
+  "references_sha256": "38d20d99a02003ce21489ceeff868e82944c943fb1607f57e8df58141ee97abc",
+  "pdf_layout_review": "passed; final Overleaf export reviewed at full resolution on pages 1\u20134 and in 12-page overview",
+  "overleaf_sync": "verified; all 25 exported source files match the reviewed local source",
+  "public_files_include_author_block": false,
+  "pdf_pages": 12,
+  "main_text_and_references_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "page_size": "A4",
+  "pdf_sha256": "91586650cf14aa7e77650feb48cfac35ffe8acf545f54d07616267dc08ddec98",
+  "build_engine": "Overleaf pdfTeX 1.40.29 (TeX Live 2026)",
+  "overfull_boxes": 0,
+  "undefined_references_or_citations": false,
+  "overleaf_export_files_compared": 25,
+  "overleaf_source_mismatches": [],
+  "compilation_errors": 0,
+  "compilation_warnings": [
+    "Expected CVPR Letter warning; course-required A4 retained"
+  ],
+  "all_pdf_numeric_tokens_match_reviewed_local_pdf": true
+}
